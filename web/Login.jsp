@@ -24,9 +24,8 @@
         <!-- Bootstrap -->
         <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
          <!-- <link rel="icon" type="image/x-icon" href="img/ciervo.png" />-->
-
+         <link href="Estilos/login.css" rel="stylesheet" type="text/css"/>
         <!-- Custom stlylesheet -->
-        <link href="Estilos/Logins.css" rel="stylesheet" type="text/css"/>
         
         <link rel="icon" type="image/x-icon" href="assets/jardin/IconoNegro.ico">
 
@@ -40,10 +39,7 @@
                     <div class="row">
 
                         <div class="booking-form">
-                            <div class="logo">
-                                <img src="img/logo-osc.png" alt="" id="logo">
-                            </div>
-
+                            
                             <div class="booking-bg">
 
                                 <div class="form-header">
@@ -52,12 +48,15 @@
                                 </div>
                             </div>
                             <form method="post" action="Usuario">
+                                <div class="logo">
+                                <img src="img/logo-osc.png" alt="" id="logo">
+                            </div>
                                 <div id="formulario">
                                     <h1>Iniciar Sesión</h1>
 
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <div class="form-ugrop">
+                                            <div class="form-group">
                                                 <span class="form-label">Usuario</span>
 
                                                 <input class="form-control" type="text" name="textLogin" placeholder="Nombre" required>

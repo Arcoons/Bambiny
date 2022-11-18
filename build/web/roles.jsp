@@ -13,14 +13,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="Estilos/index.css">
-
+        
         <!----======== CSS ======== -->
-        <link href="Estilos/SliderNav.css" rel="stylesheet" type="text/css"/>
-
+        <link href="Estilos/NavBar.css" rel="stylesheet" type="text/css"/>
+        <link href="Estilos/generales.css" rel="stylesheet" type="text/css"/>
         <!----===== Boxicons CSS ===== -->
         <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
-
         <link rel="icon" type="image/x-icon" href="assets/jardin/IconoNegro.ico">
         <title>JSP Page</title>
     </head>
@@ -76,15 +74,20 @@
 
                 <div class="bottom-content">
                     <li class="">
-
+                    
+                    <a>
                         <form method="post" action="Sesiones">
-
-                            <a href="#">
-                                <i class="bx bx-log-out icon" ></i>
-                                <input class="text nav-text" type="submit" value="Cerrar Sesion" >
-                            </a>
+                        
+                            <button type="submit" class="out-btn">
+                            <i class="bx bx-log-out icon"></i>
+                            <span class="text nav-text">Cerrar Sesion</span>
+                        </button>
                         </form>
-                    </li>
+                    </a>
+                        
+                    
+                </li>
+
 
 
                     <li class="mode">
@@ -106,57 +109,60 @@
 
 
         <section class="home">
-            <div class="login-box">
-                <h2>Asginar roles a Usuario</h2>
-                <form method="post" action="Usuario">
+            
+            <div class="contenido">
+                <div class="login-box">
+                    <h2>Asginar roles a Usuario</h2>
+                    <form method="post" action="Usuario">
 
-                    <div class="user-box">
-                        <h2><%=request.getAttribute("loginUsuario")%></h2><br>
-                    </div>
+                        <div class="user-box">
+                            <h2><%=request.getAttribute("loginUsuario")%></h2><br>
+                        </div>
 
-                    <div class="user-box">
-                        <h2><%=request.getAttribute("estadoUsuario")%></h2><br>
-                    </div>
+                        <div class="user-box">
+                            <h2><%=request.getAttribute("estadoUsuario")%></h2><br>
+                        </div>
 
-                    <h3>roles</h3>
+                        <h3>roles</h3>
 
-                    <select name="rol">
-                        <option>Elija el rol</option>
-                        <%
-                            RolVO rolVO = new RolVO();
-                            RolDAO rolDAO = new RolDAO();
-                            ArrayList<RolVO> listarRoles = rolDAO.listarRoles();
-                            for (int i = 0; i < listarRoles.size(); i++) {
+                        <select name="rol">
+                            <option>Elija el rol</option>
+                            <%
+                                RolVO rolVO = new RolVO();
+                                RolDAO rolDAO = new RolDAO();
+                                ArrayList<RolVO> listarRoles = rolDAO.listarRoles();
+                                for (int i = 0; i < listarRoles.size(); i++) {
 
-                                rolVO = listarRoles.get(i);
+                                    rolVO = listarRoles.get(i);
 
-                        %>
-                        <option value="<%=rolVO.getRolId()%>"><%=rolVO.getRolTiPo()%></option>
-                        <%
-                            }
-                        %>
-                    </select>
+                            %>
+                            <option value="<%=rolVO.getRolId()%>"><%=rolVO.getRolTiPo()%></option>
+                            <%
+                                }
+                            %>
+                        </select>
 
-                    <br>
-                    <div class="user-box">
-                        <button>asignar</button> <br>
-                        <input type="hidden" value="<%=request.getAttribute("idUsuario")%>" name="usuarioID">
-                        <input type="hidden" value="9" name="opcion">
-                    </div>
+                        <br>
+                        <div class="user-box">
+                            <button>asignar</button> <br>
+                            <input type="hidden" value="<%=request.getAttribute("idUsuario")%>" name="usuarioID">
+                            <input type="hidden" value="9" name="opcion">
+                        </div>
 
-                </form>
+                    </form>
 
-                <%
+                    <%
                     if (request.getAttribute("mensajeError") != null) { %>
-                ${mensajeError}
+                    ${mensajeError}
 
-                <%} else {%>
-                ${mensajeExito}        
-                <%}%>
+                    <%} else {%>
+                    ${mensajeExito}        
+                    <%}%>
+                </div>
             </div>
-
+                
         </section>
 
-        <script src="js/navbar.js" type="text/javascript"></script>
+
     </body>
 </html>

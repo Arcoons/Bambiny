@@ -59,10 +59,7 @@
                                     <input type="password" name="textPassword" placeholder="******" >
                                 </div>
                                 
-                                <div class="input-field">
-                                    
-                                    <input type="hidden" name="textPassword" placeholder="******" >
-                                </div>
+                                
 
                             </div>
                         </div>
@@ -78,5 +75,6 @@
                 
             </div>
         </section>
+        <script src="js/navbar.js" type="text/javascript"></script>
     </body>
 </html>
