@@ -24,7 +24,8 @@
         <h2>Acudientes</h2>
 
 
-        <%           
+        <%    
+            String id_alum = aluVO.getID_ALUM();
             AcudienteVO2 AcuVO2 = (AcudienteVO2) request.getAttribute("datosConsultados");
             if (AcuVO2 != null) {
         %>
