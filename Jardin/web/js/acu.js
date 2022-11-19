@@ -18,75 +18,131 @@ const imputs = document.querySelectorAll('#regiAcu input');
 
 //Objetos con expresion regulares para validaciòn
 const vali = {
+    nombre: /^[A-Za-z\s]{3,40}$/,
+    apellido: /^[A-Za-z\s]{3,40}$/,
+    numeros: /^[0-9]{3,11}$/
 
-numeros: /^[0-9]{5,10}$/ ,
-nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/ ,
-correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
+
 };
 
 const campos = {
- nom: false,
- apel: false,
- na:false,
- nom2: false,
- apel2: false,
- cedu:false,
- cel:false,
- dire:false
+    nom: false,
+    apel: false,
+    na: false,
+    nom2: false,
+    apel2: false,
+    cedu: false,
+    cel: false,
+
 };
 
-const valiInput=(vali,input,grupo)=>{
- if (vali.test(input.value)){
-    //Si expresion regular se cumple
-    //Remover clase error
-    document.getElementById(`f_${grupo}`).classList.remove('error');
-    //agregar clase success
-    document.getElementById(`f_${grupo}`).classList.add('success');
-    document.querySelector(`#f_${grupo} .msg_error`).classList.remove('msg_error_visible');
-    document.querySelector(`#f_${grupo} i`).classList.add('fa-check-circle');
-    document.querySelector(`#f_${grupo} i`).classList.remove('fa-times-circle');
-    campos[grupo] = true;
- } else {    
-    document.getElementById(`f_${grupo}`).classList.add('error'); 
-    document.querySelector(`#f_${grupo} .msg_error`).classList.add('msg_error_visible');
-    document.querySelector(`#f_${grupo} i`).classList.remove('fa-check-circle');
-    document.querySelector(`#f_${grupo} i`).classList.add('fa-times-circle');
-    campos[grupo] = false;
- }
-};
-
-const validarcampos=(e)=>{
-    /*console.log(e.target.name);*/ //compruebe para traer el name del input
+const acudi = (e) => {
     switch (e.target.name) {
         case "nom":
-            validarInput(vali.numeros,e.target,e.target.name);
-        break;
+            if (vali.nombre.test(e.target.value)) {
+                document.getElementById('error1').classList.remove('error');
+                document.getElementById('nom').classList.add('correct');
+                document.getElementById('nom').classList.remove('incorrect');
+                campos['nom'] = true;
+            } else {
+                document.getElementById('error1').classList.add('error');
+                document.getElementById('nom').classList.add('incorrect');
+                document.getElementById('nom').classList.remove('correct');
+                campos['nom'] = false;
+            }
+            break;
         case "apel":
-            validarInput(vali.nombre,e.target,e.target.name);
-        break;
+            if (vali.nombre.test(e.target.value)) {
+                document.getElementById('error2').classList.remove('error');
+                document.getElementById('apel').classList.add('correct');
+                document.getElementById('apel').classList.remove('incorrect');
+                campos['apel'] = true;
+            } else {
+                document.getElementById('error2').classList.add('error');
+                document.getElementById('apel').classList.add('incorrect');
+                document.getElementById('apel').classList.remove('correct');
+                campos['apel'] = false;
+            }
+            break;
         case "na":
-            validarInput(vali.numeros,e.target,e.target.name);
-        break
+
+            let fechaA = new Date();
+            const ano = parseInt(fechaA.getFullYear());
+
+            const fechaN = document.getElementById('na').value;
+            const anoNaci = parseInt(String(fechaN).substring(0, 4));
+            let edad = ano - anoNaci;
+            parseInt(edad);
+
+            console.log(edad);
+            if (ano > 1930 && edad > 17 && edad < 100) {
+                document.getElementById('error3').classList.remove('error');
+                document.getElementById('error3').classList.add('correct');
+                document.getElementById('error3').classList.remove('incorrect');
+                campos['na'] = true;
+            } else {
+                document.getElementById('error3').classList.add('error');
+                document.getElementById('error3').classList.remove('correct');
+                document.getElementById('error3').classList.add('incorrect');
+                campos['na'] = false;
+            }
+            break;
         case "nom2":
-            validarInput(vali.numeros,e.target,e.target.name);
-        break
+            if (vali.nombre.test(e.target.value)) {
+                document.getElementById('error4').classList.remove('error');
+                document.getElementById('nom2').classList.add('correct');
+                document.getElementById('nom2').classList.remove('incorrect');
+                campos['nom2'] = true;
+            } else {
+                document.getElementById('error4').classList.add('error');
+                document.getElementById('nom2').classList.add('incorrect');
+                document.getElementById('nom2').classList.remove('correct');
+                campos['nom2'] = false;
+            }
+            break;
         case "apel2":
-            validarInput(vali.nombre,e.target,e.target.name);
-        break
+            if (vali.nombre.test(e.target.value)) {
+                document.getElementById('error5').classList.remove('error');
+                document.getElementById('apel2').classList.add('correct');
+                document.getElementById('apel2').classList.remove('incorrect');
+                campos['apel2'] = true;
+            } else {
+                document.getElementById('error5').classList.add('error');
+                document.getElementById('apel2').classList.add('incorrect');
+                document.getElementById('apel2').classList.remove('correct');
+                campos['apel2'] = false;
+            }
+            break;
         case "cedu":
-            validarInput(vali.correo,e.target,e.target.name);
-        break 
+            if (vali.numeros.test(e.target.value)) {
+                document.getElementById('error6').classList.remove('error');
+                document.getElementById('cedu').classList.add('correct');
+                document.getElementById('cedu').classList.remove('incorrect');
+                campos['cedu'] = true;
+            } else {
+                document.getElementById('error6').classList.add('error');
+                document.getElementById('cedu').classList.add('incorrect');
+                document.getElementById('cedu').classList.remove('correct');
+                campos['cedu'] = false;
+            }
+            break;
+    
         case "cel":
-            validarInput(vali.numeros,e.target,e.target.name);
-        break
-        case "dire":
-            validarInput(vali.numeros,e.target,e.target.name);
-        break
-    }
-};
-
-
-imputs.forEach((campo)=>{
-    campo.addEventListener('keyup', validarcampos);
-    campo.addEventListener('blur', validarcampos);
-});
+            if (vali.numeros.test(e.target.value)) {
+                document.getElementById('error7').classList.remove('error');
+                document.getElementById('cel').classList.add('correct');
+                document.getElementById('cel').classList.remove('incorrect');
+                campos['cel'] = true;
+            } else {
+                document.getElementById('error7').classList.add('error');
+                document.getElementById('cel').classList.add('incorrect');
+                document.getElementById('cel').classList.remove('correct');
+                campos['cel'] = false;
+            }
+            break;
+            }
+        }
+            imputs.forEach((campo) => {
+                campo.addEventListener('keyup', acudi);
+                campo.addEventListener('blur', acudi);
+        });

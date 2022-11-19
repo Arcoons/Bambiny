@@ -61,42 +61,43 @@
                                 <div class="input-field">
                                     <label>Primer Nombre</label>
                                     <input type="text" name="textNom_acud1" placeholder="Escribe tu nombre" id="nom"></i>
-                            <span class="msg_error">Solo puede ingresar letras y un maximo de 40 caracteres</span>
+                           <p id="error2" class="error1">El campo solo acepta letras, minimo 3 letras</p>
                                 </div>
 
                                 <div class="input-field">
                                     <label>Primer Apellido</label>
                                     <input type="text" name="textApel_acud1" placeholder="Escribe tu apellido" id="apel"></i>
-                            <span class="msg_error">Solo puede ingresar letras y un maximo de 40 caracteres</span>
+                            <p id="error2" class="error2">El campo solo acepta letras, minimo 4 letras</p>
                                 </div>
 
                                 <div class="input-field">
                                     <label>Fecha de nacimiento</label>
                                     <input type="date" name="textFechnaci_acud" placeholder="Tu fecha de nacimiento" id="na" >
+                                    <p id="error3" class="error3">Debe ser una fecha valida, mayor de edad</p>
                                 </div>
 
                                 <div class="input-field">
                                     <label>Segundo Nombre</label>
                                     <input type="text" name="textNom_acud2" placeholder="Escribe tu nombre" id="nom2"></i>
-                            <span class="msg_error">Solo puede ingresar letras y un maximo de 40 caracteres</span>
+                           <p id="error2" class="error4">El campo solo acepta letras, minimo 3 letras</p>
                                 </div>
 
                                 <div class="input-field">
                                     <label>Segundo Apellido</label>
                                     <input type="text" name="textApel_acud2" placeholder="Escribe tu apellido" id="apel2"></i>
-                            <span class="msg_error">Solo puede ingresar letras y un maximo de 40 caracteres</span>
+                            <p id="error5" class="error5">El campo solo acepta letras, minimo 4 letras</p>
                                 </div>
 
                                 <div class="input-field">
                                     <label>Número de cedula</label>
                                     <input type="number" name="textNumdocu_acud" placeholder="numero de documento" id="cedu">
-                                    </i><span class="msg_error">Solo puede ingresar numeros de minimo 5 y maximo 10 digitos</span>
+                                    <p id="error6" class="error6">El campo solo admite numeros, minimo 3 y maximo 11</p>
                                 </div>
 
                                 <div class="input-field">
                                     <label>Numero de celular</label>
                                     <input type="tel" name="textTele_acud" placeholder="Tu Numero Telefonico" id="cel" >
-                                    </i><span class="msg_error">Solo puede ingresar numeros de minimo 5 y maximo 10 digitos</span>
+                                     <p id="error7" class="error7">El campo solo admite numeros, minimo 3 y maximo 11</p>
                                 </div>
 
                                 <div class="input-field">
@@ -117,10 +118,7 @@
 
                             </div>
                         </div>
-                        <div class="frm-no-enviado" id="frm-no-enviado">
-                        <p><b>Error:</b> Hay campos incompletos o incorrectos.</p>
-                        </div>
-
+                        <p id="uError" class="uError" >Debe completar el formulario</p>
                         <input type="hidden" name="textId_alum" value="<%= id_alumn %>">
                         <button class="sumbit">
                             <span class="btnText">Enviar</span>
