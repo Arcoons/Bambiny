@@ -1,0 +1,60 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 19/11/2022, 12:53:52 AM
+    Author     : chris
+*/
+.msg_error{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    visibility: hidden;
+    opacity: 0;
+    font-size: 100%;
+    margin-bottom: 1%;
+    background-color: red;
+    height: 0rem;
+}
+
+.msg_error_visible{
+    visibility: visible;
+    opacity: 1;
+    height: 2.2em;
+}
+/*iconos*/
+.group_input{
+    position: relative;
+}
+.frm-icon{
+    position: absolute;
+    z-index: 100;
+    font-size: 16px;
+}
+
+/*Validacion de iconos*/
+.success .frm-icono{
+    color: lime;
+    opacity: 1;
+}
+
+.error .frm-icono{
+    color: red;
+    opacity: 1;
+}
+
+/*Estilos de formulario no enviado por errores*/
+.frm-no-enviado{
+    background: red;
+    padding: 15px;
+    border-radius: 3px;
+    visibility: hidden;
+    opacity: 0;
+}
+.frm-no-enviado-activo{
+    visibility: visible;
+    opacity: 1;
+}
