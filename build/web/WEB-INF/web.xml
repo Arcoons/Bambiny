@@ -16,14 +16,8 @@
         <param-name>password</param-name>
         <param-value>uezd iloy forj zgjf</param-value>
     </context-param>
-    <servlet>
-        <servlet-name>archivo</servlet-name>
-        <servlet-class>Controlador.archivo</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>archivo</servlet-name>
-        <url-pattern>/archivo</url-pattern>
-    </servlet-mapping>
+    
+    
     <error-page>
         <error-code>404</error-code>
         <location>/urlNotFound</location>

@@ -19,7 +19,8 @@
         <link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="sweetalert2.min.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Lista Acudientes</title>
+        <link rel="icon" type="image/x-icon" href="assets/jardin/IconoNegro.ico">
+        <title>Alumno Acudientes | Bambiny</title>
     </head>
     <body>
         <%@include file="NavBar.jsp" %>

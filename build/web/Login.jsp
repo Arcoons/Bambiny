@@ -24,7 +24,9 @@
         <!-- Bootstrap -->
         <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
          <!-- <link rel="icon" type="image/x-icon" href="img/ciervo.png" />-->
+         
          <link href="Estilos/login.css" rel="stylesheet" type="text/css"/>
+         
         <!-- Custom stlylesheet -->
         
         <link rel="icon" type="image/x-icon" href="assets/jardin/IconoNegro.ico">

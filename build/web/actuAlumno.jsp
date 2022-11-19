@@ -14,13 +14,14 @@
 <html>
     <head>
         <!----======== CSS ======== -->
-        <link href="Estilos/form1.css" rel="stylesheet" type="text/css"/>
+        <link href="Estilos/form2.css" rel="stylesheet" type="text/css"/>
 
         <!----===== Iconscout CSS ===== -->
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>actualizar alumno</title>
+        <link rel="icon" type="image/x-icon" href="assets/jardin/IconoNegro.ico">
+        <title>Actualizar Alumno | Bambiny</title>
     </head>
     <body>
         <%@include file="NavBar.jsp" %>
@@ -43,7 +44,7 @@
             %>
             
             <div class="container">
-                <header>Registration</header>
+                <header>Actualiza tus datos</header>
                 <form method="post" action="Alumno">
                     <div class="form first">
                         <div class="details personal">
@@ -92,7 +93,7 @@
                                     <label>Eps</label>
                                     <select name="textid_eps">
 
-                                        <option>Seleccione la eps</option>
+                                        
                                         <%                        EpsDAO epsDAO = new EpsDAO();
                                             for (EpsVO epsVO : epsDAO.listar()) {
                                         %>
@@ -105,7 +106,7 @@
                                     <label>Lugar de Nacimiento</label>
                                     <select name="textid_luganaci">
 
-                                        <option>Seleccione lugar de nacimiento</option>
+                                        
                                         <%
                                             lunacDAO lunacDAO = new lunacDAO();
                                             for (lunacVO lunacVO : lunacDAO.listarn()) {

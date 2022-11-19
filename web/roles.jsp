@@ -13,7 +13,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        
+
+        <link href="Estilos/form1.css" rel="stylesheet" type="text/css"/>
+
+        <!----===== Iconscout CSS ===== -->
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
         <!----======== CSS ======== -->
         <link href="Estilos/NavBar.css" rel="stylesheet" type="text/css"/>
         <link href="Estilos/generales.css" rel="stylesheet" type="text/css"/>
@@ -74,19 +79,19 @@
 
                 <div class="bottom-content">
                     <li class="">
-                    
-                    <a>
-                        <form method="post" action="Sesiones">
-                        
-                            <button type="submit" class="out-btn">
-                            <i class="bx bx-log-out icon"></i>
-                            <span class="text nav-text">Cerrar Sesion</span>
-                        </button>
-                        </form>
-                    </a>
-                        
-                    
-                </li>
+
+                        <a>
+                            <form method="post" action="Sesiones">
+
+                                <button type="submit" class="out-btn">
+                                    <i class="bx bx-log-out icon"></i>
+                                    <span class="text nav-text">Cerrar Sesion</span>
+                                </button>
+                            </form>
+                        </a>
+
+
+                    </li>
 
 
 
@@ -110,57 +115,68 @@
 
         <section class="home">
             
-            <div class="contenido">
-                <div class="login-box">
-                    <h2>Asginar roles a Usuario</h2>
-                    <form method="post" action="Usuario">
-
-                        <div class="user-box">
-                            <h2><%=request.getAttribute("loginUsuario")%></h2><br>
-                        </div>
-
-                        <div class="user-box">
-                            <h2><%=request.getAttribute("estadoUsuario")%></h2><br>
-                        </div>
-
-                        <h3>roles</h3>
-
-                        <select name="rol">
-                            <option>Elija el rol</option>
-                            <%
-                                RolVO rolVO = new RolVO();
-                                RolDAO rolDAO = new RolDAO();
-                                ArrayList<RolVO> listarRoles = rolDAO.listarRoles();
-                                for (int i = 0; i < listarRoles.size(); i++) {
-
-                                    rolVO = listarRoles.get(i);
-
-                            %>
-                            <option value="<%=rolVO.getRolId()%>"><%=rolVO.getRolTiPo()%></option>
-                            <%
-                                }
-                            %>
-                        </select>
-
-                        <br>
-                        <div class="user-box">
-                            <button>asignar</button> <br>
-                            <input type="hidden" value="<%=request.getAttribute("idUsuario")%>" name="usuarioID">
-                            <input type="hidden" value="9" name="opcion">
-                        </div>
-
-                    </form>
-
-                    <%
+            <%
                     if (request.getAttribute("mensajeError") != null) { %>
                     ${mensajeError}
 
                     <%} else {%>
                     ${mensajeExito}        
                     <%}%>
-                </div>
+            <div class="container">
+                <header>Asignar Rol</header>
+                <form method="post" action="Usuario">
+                    <div class="form first">
+                        <div class="details personal">
+                            <span class="title">Usuario</span>
+
+
+                            <div class="user-box">
+                                <h2><%=request.getAttribute("loginUsuario")%></h2><br>
+                            </div>
+
+                            <div class="user-box">
+                                <h2><%=request.getAttribute("estadoUsuario")%></h2><br>
+                            </div>
+
+                            <div class="fields">
+
+
+                                <div class="input-field">
+                                    <label>Roles</label>
+                                    <select name="rol">
+                                        <option>Elija el rol</option>
+                                        <%
+                                            RolVO rolVO = new RolVO();
+                                            RolDAO rolDAO = new RolDAO();
+                                            ArrayList<RolVO> listarRoles = rolDAO.listarRoles();
+                                            for (int i = 0; i < listarRoles.size(); i++) {
+
+                                                rolVO = listarRoles.get(i);
+
+                                        %>
+                                        <option value="<%=rolVO.getRolId()%>"><%=rolVO.getRolTiPo()%></option>
+                                        <%
+                                            }
+                                        %>
+                                    </select>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+
+                        <button class="sumbit">
+                            <span class="btnText">Enviar</span>
+                            <i class="uil uil-navigator"></i>
+                        </button>
+                        <input type="hidden" value="<%=request.getAttribute("idUsuario")%>" name="usuarioID">
+                        <input type="hidden" value="9" name="opcion">
+                    </div> 
+                </form>
             </div>
-                
+
         </section>
 
 

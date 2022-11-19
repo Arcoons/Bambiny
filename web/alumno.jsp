@@ -14,7 +14,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="Estilos/director.css">
-        <title>JSP Page</title>
+        <link rel="icon" type="image/x-icon" href="assets/jardin/IconoNegro.ico">
+        <title>Alumno | Bambiny</title>
+        
     </head>
     <body>
 

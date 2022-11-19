@@ -11,13 +11,14 @@
 <html>
     <head>
         <!----======== CSS ======== -->
-        <link href="Estilos/form1.css" rel="stylesheet" type="text/css"/>
+        <link href="Estilos/form2.css" rel="stylesheet" type="text/css"/>
 
         <!----===== Iconscout CSS ===== -->
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <link rel="icon" type="image/x-icon" href="assets/jardin/IconoNegro.ico">
+        <title>Actualizar Acudiente | Bambiny</title>
     </head>
     <body>
     <%@include file="NavBar.jsp" %>
@@ -51,7 +52,7 @@
                 ${mensajeExito}
                 <%}
                 %>
-                <header>Registration</header>
+                <header>Acrualizar Acudiente</header>
                 <form method="post" action="Acudientes">
                     <div class="form first">
                         <div class="details personal">

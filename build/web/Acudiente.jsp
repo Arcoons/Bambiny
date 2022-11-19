@@ -17,13 +17,14 @@
 <html>
     <head>
         <!----======== CSS ======== -->
-        <link href="Estilos/form1.css" rel="stylesheet" type="text/css"/>
+        <link href="Estilos/form2.css" rel="stylesheet" type="text/css"/>
 
         <!----===== Iconscout CSS ===== -->
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Acudiente</title>
+        <link rel="icon" type="image/x-icon" href="assets/jardin/IconoNegro.ico">
+        <title>Registrar Acudiente | Bambiny</title>
     </head>
     
     <body>
@@ -51,7 +52,7 @@
                 ${mensajeExito}
                 <%}
                 %>
-                <header>Registration</header>
+                <header>Registrar Acudiente</header>
                 <form method="post" action="Acudientes">
                     <div class="form first">
                         <div class="details personal">

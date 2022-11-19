@@ -19,7 +19,8 @@
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <link rel="icon" type="image/x-icon" href="assets/jardin/IconoNegro.ico">
+        <title>Registrar Documento | Bambiny</title>
     </head>
     <body>
    
@@ -45,7 +46,7 @@
             ${MensajeExito}        
             <%}%>
             <div class="container">
-                <header>Registration</header>
+                <header>Registrar Documentos</header>
                 <form method="post" action="Document">
                     <div class="form first">
                         <div class="details personal">

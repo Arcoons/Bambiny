@@ -18,12 +18,13 @@
 <html>
     <head>
          <!----======== CSS ======== -->
-        <link href="Estilos/form1.css" rel="stylesheet" type="text/css"/>
+        <link href="Estilos/form2.css" rel="stylesheet" type="text/css"/>
 
         <!----===== Iconscout CSS ===== -->
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Registrar Alumno</title>
+        <link rel="icon" type="image/x-icon" href="assets/jardin/IconoNegro.ico">
+        <title>Registrar Alumno | Bambiny</title>
     </head>
     <body>
             
@@ -53,7 +54,7 @@
                 ${MensajeExito}        
                 <%}%>
             <div class="container">
-                <header>Registration</header>
+                <header>Registrar Alumno</header>
                 <form method="post" action="Alumno">
                     <div class="form first">
                         <div class="details personal">
@@ -151,12 +152,12 @@
 
                                 <div class="input-field">
                                     <label>Telefono fijo</label>
-                                    <input type="number" name="texttelefijo_alum" placeholder="Grupo Sanguineo" >
+                                    <input type="number" name="texttelefijo_alum" placeholder="Telefono fijo" >
                                 </div>
                                 
                                 <div class="input-field">
                                     <label>Telefono Celular</label>
-                                    <input type="number" name="texttelecelu_alum" placeholder="Grupo Sanguineo" >
+                                    <input type="number" name="texttelecelu_alum" placeholder="Telefono Celular" >
                                 </div>
 
 

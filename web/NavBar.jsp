@@ -14,8 +14,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!----======== CSS ======== -->
-    <link href="Estilos/NavBar.css" rel="stylesheet" type="text/css"/>
     
+    <link href="Estilos/NavBar.css" rel="stylesheet" type="text/css"/>
     <!----===== Boxicons CSS ===== -->
     <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
     
@@ -118,7 +118,7 @@
                     </li>
                     <li class="nav-links ">
                         <a href="consultarAlumno.jsp">
-                            <i class='bx bx-child icon'></i>
+                            <i class='bx bx-user icon'></i>
                             <span class="text nav-text">Consultar Alumnos</span>
                         </a>
                     </li>

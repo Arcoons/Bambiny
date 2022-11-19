@@ -1,28 +1,17 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 17-nov-2022, 23:39:56
-    Author     : yoang
-*/
 
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 08-nov-2022, 15:14:54
-    Author     : yoang
-*/
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
 
-
+html{
+    font-family: 'Alice', serif;
+    background-repeat: no-repeat;
+    background-image: url(../img/bg.jpg);
+    background-size: cover;
+    overflow: hidden;
+    
+}
 
 h1{
     font-family: 'Poppins', sans-serif;
@@ -37,8 +26,8 @@ h1{
 }
 
     #icono{
-    width: 71%;
-    margin-left: 15%;
+    width: 101%;
+    /* margin-left: 15%; */
     }.registro{
     color: #F69D9F;
     }.registro:hover{
@@ -88,18 +77,12 @@ h1{
     transform: translateY(-50%);
     }
 
-    #booking {
-    font-family: 'Alice', serif;
-    background-repeat: no-repeat;
-    background-image: url(../img/bg.jpg);
-    background-size: cover;
-    }
 
     .booking-form {
     font-family: 'Poppins', sans-serif;
     position: relative;
-    max-width: 912px;
-    width: 100%;
+    /* max-width: 912px; */
+    width: 58%;
     margin: auto;
     background: #e2e2e2c9;
     border-radius: 6px;
@@ -112,12 +95,16 @@ h1{
     left: 25px;
     top: -25px;
     bottom: -25px;
-    width: 400px;
+    /* width: 400px; */
+    /* width: 50%; */
+    width: 40%;
     padding: 25px;
     border-radius: 6px;
     -webkit-box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.1);
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
     }
 
     .booking-form .booking-bg::before {
@@ -127,22 +114,29 @@ h1{
     right: 0;
     bottom: 0;
     top: 0;
+    display: flex;
     background: #f69d9e86;
     }
 
     .booking-form>form {
-    margin-left: 425px;
-
-    padding-left: 50px;
-    padding-bottom: 53px;
-    padding-right: 50px;
+    margin-left: 46%;
+    /* padding-left: 50px; */
+    /* padding-bottom: 53px; */
+    /* padding-right: 50px; */
+    padding: 3em;
+    /* width: 30em; */
+    display: flex;
+    flex-direction: column;
     }
 
     .booking-form .form-header {
-    margin-bottom: 30px;
-    margin-top: 60px;
+    /* margin-bottom: 30px; */
+    /* margin-top: 60px; */
     position: relative;
     z-index: 20;
+    display: flex;
+    justify-content: center;
+    /* width: 100%; */
     }
 
     .booking-form .form-header h2 {
@@ -161,7 +155,7 @@ h1{
     }
 
     .booking-form .form-group {
-    position: relative;
+    /* position: relative; */
     margin-bottom: 20px;
     }
 
@@ -178,6 +172,7 @@ h1{
     border-radius: 40px;
     -webkit-transition: 0.2s all;
     transition: 0.2s all;
+    width: 100%;
     }
     
     booking-form .form-label {
@@ -252,16 +247,18 @@ h1{
     height: 24px;
     font-size: 14px;
     font-weight: 400;
-    margin-left: 20px;
+
     }
 
     .booking-form .form-btn {
     margin-top: 30px;
+    display: flex;
+    justify-content: center;
     }
 
     .booking-form .submit-btn {
-    display: block;
-    width: 100%;
+    /* display: block; */
+    width: 63%;
     color: #fff;
     background-color: rgba(56, 31, 5, 0.9);
     font-weight: 700;
@@ -287,10 +284,25 @@ h1{
     top: -15px;
     width: 95%;
     margin: auto;
+    display: none;
     }
     .booking-form>form {
     margin-left: 0px;
+    padding: 5px;
     }
+    
+    .booking-form {
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    /* max-width: 912px; */
+    width: 100%;
+    margin: auto;
+    background: #e2e2e2c9;
+    border-radius: 6px;
+    -webkit-box-shadow: 0px 5px 10px -5px rgb(0 0 0 / 10%);
+    box-shadow: 0px 5px 10px -5px rgb(0 0 0 / 10%);
+    }
+    
     }
     
     
