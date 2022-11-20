@@ -7,13 +7,20 @@ package Controlador;
 
 import ModeloDAO.docuDAO;
 import ModeloVO.docuVO;
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.FileItemFactory;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 /**
  *
@@ -34,6 +41,7 @@ public class DocumentControlador extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        Imagen p=new Imagen();
         
         
         
@@ -53,19 +61,44 @@ public class DocumentControlador extends HttpServlet {
 //3. ¿Quién hace las operaciones? DAO
         docuDAO doDAO = new docuDAO(doVO);
         
+        
+        
           
         
        //4. dministrar Operaciones
           switch (opcion) {
 
             case 1:
-                if (doDAO.agregarRegistro()) {
+                ArrayList<String>lista=new ArrayList<>();
+                try{
+                    FileItemFactory file= new DiskFileItemFactory();
+                    ServletFileUpload fileUpload=new ServletFileUpload(file);
+                    List items=fileUpload.parseRequest(request);
+                    for (int i=0; i<items.size(); i++){
+                    FileItem fileItem=(FileItem)items.get(i);
+                     if(!fileItem.isFormField()){
+                         File f=new File("C:\\Users\\chris\\OneDrive\\Imágenes\\Documentos\\GitHub\\Bambiny\\Jardin\\web\\Imagen"+fileItem.getName());
+                         fileItem.write(f);
+                         p.setRuta(f.getAbsolutePath());
+                         if (doDAO.agregarRegistro()) {
                     request.setAttribute("MensajeExito", "Documento cargado correctamente");
-                } else {
+                         }else {
                     request.setAttribute("MensajeError", "El documento no se cargo correctamente");
-                }
+                    }
+                     }else{
+                         lista.add(fileItem.getString());
+                         
+                     }
+                    }
+                    p.setNombre(lista.get(0));
+                    doDAO.agregarRegistro(p);
+                    
+                }catch(Exception e){
+                } 
                 request.getRequestDispatcher("documento.jsp").forward(request, response);
                 break;
+                
+                               
                 
             case 2:
                 if (doDAO.actualizarRegistro()) {

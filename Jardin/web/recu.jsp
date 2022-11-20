@@ -54,12 +54,12 @@
                                 <img src="img/logo-osc.png" alt="" id="logo">
                             </div>
                                 <div id="formulario">
-                                    <h1>Iniciar Sesión</h1>
+                                    <h1>Recuperar Contraseña</h1>
 
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <span class="form-label">Usuario</span>
+                                                <span class="form-label">Correo</span>
 
                                                 <input class="form-control" type="text" name="textLogin" placeholder="Correo" required id="cor">
                                                  <p id="error1" class="error1">Debe ser un correo valido</p>
@@ -100,10 +100,7 @@
                                 <%}
                                 %>
                             </form>
-                            <form>
-                                <button id="btnpass" class="btn submits" ><a href="recu.jsp">Olvido su contraseña</a></button>
-                            </form>
-                             
+                            
 
                         </div>
                     </div>
