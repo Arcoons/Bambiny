@@ -170,7 +170,7 @@ form .fields .input-field{
     font-size: 14px;
     font-weight: 400;
 }
-form button:hover{
+form .button:hover{
     background-color: #8b4d3b;
 }
 form button i,

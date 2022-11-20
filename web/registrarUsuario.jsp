@@ -44,7 +44,7 @@
                         <header>Administrador</header>
 
                         <div class="pag">
-                            <a href="admin.jsp">Inicio</a><p> >> </p><a href="registrarUsuario.jsp" >Registrar Usuario</a>
+                            <a href="MenuAdmin.jsp">Inicio</a><p> >> </p><a href="registrarUsuario.jsp" >Registrar Usuario</a>
                         </div>
                     </div>    
                     <div class="boton">
@@ -81,7 +81,7 @@
                                     </div>
                                 </div>
 
-                                <button class="sumbit">
+                                <button class="sumbit button">
                                     <span class="btnText">Enviar</span>
                                     <i class="uil uil-navigator"></i>
                                 </button>

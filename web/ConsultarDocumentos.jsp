@@ -38,7 +38,7 @@
         <%@include file="NavBar.jsp" %>
         <section class="home">
             <div class="contenido">
-                <a href="ConsultarMat2.jsp">Volver</a>
+                
                 <%            AlumnoVO aluVO = (AlumnoVO) request.getAttribute("datosConsultados");
                     if (aluVO != null) {
                 %>

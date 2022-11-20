@@ -12,7 +12,7 @@
     <head>
         <!----======== CSS ======== -->
         <link href="Estilos/form2.css" rel="stylesheet" type="text/css"/>
-
+        <link href="Estilos/generales.css" rel="stylesheet" type="text/css"/>
         <!----===== Iconscout CSS ===== -->
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
@@ -21,126 +21,134 @@
         <title>Actualizar Acudiente | Bambiny</title>
     </head>
     <body>
-    <%@include file="NavBar.jsp" %>
-        <%
-        
-        String id_usua = rolVO.getRolId();
+        <%@include file="NavBar.jsp" %>
+        <%            String id_usua = rolVO.getRolId();
 
-        AlumnoVO alumVO = new AlumnoVO();
-        AlumnoDAO alumDAO = new AlumnoDAO(alumVO);
-        
-        alumVO = alumDAO.consultarAlumno(id_usua);
-        
-        String id_alumn = alumVO.getId_alum();
+            AlumnoVO alumVO = new AlumnoVO();
+            AlumnoDAO alumDAO = new AlumnoDAO(alumVO);
 
-    %>
-     <section class="home">
-    <h1>Acudiente</h1><br><br>
-    <a href="ListaActAcud.jsp">Volver</a>
-        
-        <%
-            AcudienteVO2 acuVO = (AcudienteVO2) request.getAttribute("datosConsultados");
-            if (acuVO != null) {
+            alumVO = alumDAO.consultarAlumno(id_usua);
+
+            String id_alumn = alumVO.getId_alum();
+
         %>
-        
-        <div class="container">
-                <%
-                if (request.getAttribute("mensajeError") != null) {%>
+        <section class="home">
+            <div class="contenido">
+                <div class="container arriba">
+                    <div>
+                        <header>Alumno</header>
 
-                ${mensajeError}
-                <%} else {%>
-                ${mensajeExito}
-                <%}
-                %>
-                <header>Acrualizar Acudiente</header>
-                <form method="post" action="Acudientes">
-                    <div class="form first">
-                        <div class="details personal">
-                            <span class="title">Datos Personales</span>
-
-                            <div class="fields">
-                                <div class="input-field">
-                                    <label>Primer Nombre</label>
-                                    <input type="text" name="textNom_acud1" value="<%= acuVO.getNOM_ACUD1() %>" >
-                                </div>
-
-                                <div class="input-field">
-                                    <label>Primer Apellido</label>
-                                    <input type="text" name="textApel_acud1" value="<%= acuVO.getAPEL_ACUD1() %>" >
-                                </div>
-
-                                <div class="input-field">
-                                    <label>Fecha de nacimiento</label>
-                                    <input type="date" name="textFechnaci_acud" value="<%= acuVO.getFECHNACI_ACUD() %>" >
-                                </div>
-
-                                <div class="input-field">
-                                    <label>Segundo Nombre</label>
-                                    <input type="text" name="textNom_acud2"  value="<%= acuVO.getNOM_ACUD2() %>" >
-                                </div>
-
-                                <div class="input-field">
-                                    <label>Segundo Apellido</label>
-                                    <input type="text" name="textApel_acud2" value="<%= acuVO.getAPEL_ACUD2() %>" >
-                                </div>
-
-                                <div class="input-field">
-                                    <label>Numero de cedula</label>
-                                    <input type="number" name="textNumdocu_acud" value="<%= acuVO.getNUMDOCU_ACUD() %>" >
-                                </div>
-
-                                <div class="input-field">
-                                    <label>Numero de celular</label>
-                                    <input type="tel" name="textTele_acud" value="<%= acuVO.getTELE_ACUD() %>" >
-                                </div>
-
-                                <div class="input-field">
-                                    <label>Direccion de domicilio</label>
-                                    <input type="text" name="textDirec_acud" value="<%= acuVO.getDIREC_ACUD() %>" >
-                                </div>
-
-                                <div class="input-field">
-                                    <label>Parentesco</label>
-                                    <input type="text" name="textParect_acud" value="<%= acuVO.getPARENT_ACUD() %>" readonly>
-                                </div>
-                                
-                                <div class="input-field">
-                                    <label>Parentesco</label>
-                                    <select name="textEstadoauto_acud">
-                                        <option value="Autorizado">Autorizado</option>
-                                        <option value="No autorizado">No Autorizado</option>
-                                    </select>
-                                    
-                                    
-                                </div>
-
-                            </div>
+                        <div class="pag">
+                            <a href="alumno.jsp">Inicio</a><p> >> </p><a href="ListaActAcud.jsp">Listar Acudientes</a><p> >> </p><a >Actualizar Acudiente</a>
                         </div>
+                    </div>    
+                    <div class="boton">
+                        <form method="post" action="Sesiones">
 
-                        
-                        <button class="sumbit">
-                            <span class="btnText">Enviar</span>
-                            <i class="uil uil-navigator"></i>
-                        </button>
-                        <input type="hidden" value="4" name="opcion">
-                        <input type="hidden" name="textID_acud" value="<%= acuVO.getID_ACUD() %>">
-                    </div> 
-                </form>
-            </div>
+                            <input class="cs" type="submit" value="Cerrar Sesion">
 
-        
-        <%}%>
+                        </form>  
+                    </div>
+
+                </div>
+             
+
+                <%            AcudienteVO2 acuVO = (AcudienteVO2) request.getAttribute("datosConsultados");
+                    if (acuVO != null) {
+                %>
+
+                <div class="container">
+                       
+
+                    <header>Actualizar Acudiente</header>
+                    <form method="post" action="Acudientes">
+                        <div class="form first">
+                            <div class="details personal">
+                                <span class="title">Datos Personales</span>
+
+                                <div class="fields">
+                                    <div class="input-field">
+                                        <label>Primer Nombre</label>
+                                        <input type="text" name="textNom_acud1" value="<%= acuVO.getNOM_ACUD1()%>" >
+                                    </div>
+
+                                    <div class="input-field">
+                                        <label>Primer Apellido</label>
+                                        <input type="text" name="textApel_acud1" value="<%= acuVO.getAPEL_ACUD1()%>" >
+                                    </div>
+
+                                    <div class="input-field">
+                                        <label>Fecha de nacimiento</label>
+                                        <input type="date" name="textFechnaci_acud" value="<%= acuVO.getFECHNACI_ACUD()%>" >
+                                    </div>
+
+                                    <div class="input-field">
+                                        <label>Segundo Nombre</label>
+                                        <input type="text" name="textNom_acud2"  value="<%= acuVO.getNOM_ACUD2()%>" >
+                                    </div>
+
+                                    <div class="input-field">
+                                        <label>Segundo Apellido</label>
+                                        <input type="text" name="textApel_acud2" value="<%= acuVO.getAPEL_ACUD2()%>" >
+                                    </div>
+
+                                    <div class="input-field">
+                                        <label>Numero de cedula</label>
+                                        <input type="number" name="textNumdocu_acud" value="<%= acuVO.getNUMDOCU_ACUD()%>" readonly="" >
+                                    </div>
+
+                                    <div class="input-field">
+                                        <label>Numero de celular</label>
+                                        <input type="tel" name="textTele_acud" value="<%= acuVO.getTELE_ACUD()%>" >
+                                    </div>
+
+                                    <div class="input-field">
+                                        <label>Direccion de domicilio</label>
+                                        <input type="text" name="textDirec_acud" value="<%= acuVO.getDIREC_ACUD()%>" >
+                                    </div>
+
+                                    <div class="input-field">
+                                        <label>Parentesco</label>
+                                        <input type="text" name="textParect_acud" value="<%= acuVO.getPARENT_ACUD()%>" >
+                                    </div>
+
+                                    <div class="input-field">
+                                        <label>Autorizado</label>
+                                        <select name="textEstadoauto_acud">
+                                            <option value="Autorizado">Autorizado</option>
+                                            <option value="No autorizado">No Autorizado</option>
+                                        </select>
 
 
-        <%
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <button class="sumbit button">
+                                <span class="btnText">Enviar</span>
+                                <i class="uil uil-navigator"></i>
+                            </button>
+                            <input type="hidden" value="4" name="opcion">
+                            <input type="hidden" name="textID_acud" value="<%= acuVO.getID_ACUD()%>">
+                        </div> 
+                    </form>
+                </div>
+
+
+                <%}%>
+
+
+                <%
             if (request.getAttribute("mensajeError") != null) { %>
-        ${mensajeError}
+                ${mensajeError}
 
-        <%} else {%>
-        ${mensajeExito}        
-        <%}%>
+                <%} else {%>
+                ${mensajeExito}        
+                <%}%>
 
-        
-     </section>
+            </div>
+        </section>
     </body>
 </html>

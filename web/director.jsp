@@ -12,7 +12,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="Estilos/generales.css" rel="stylesheet" type="text/css"/>
         <link href="Estilos/extras.css" rel="stylesheet" type="text/css"/>
-        
+
         <link rel="icon" type="image/x-icon" href="assets/jardin/IconoNegro.ico">
         <title>Director | Bambiny</title>
     </head>
@@ -22,138 +22,89 @@
 
 
         <section class="home">
-
-            <div class="container arriba">
-                <div>
-                    <header>Director</header>
-
-                    <div class="pag">
-                        <a href="director.jsp">Inicio</a><p> >> </p><a href="registrarUsuario.jsp" >Registrar Usuario</a>
-                    </div>
-                </div>    
-                <div class="boton">
-                    <form method="post" action="Sesiones">
-
-                        <input class="cs" type="submit" value="Cerrar Sesion">
-
-                    </form>  
-                </div>
-
-            </div>
-
-
-            <section class="services section container" id="services">
-                <h2 class="section__title">Projects_</h2>
-
-                <div class="services__container grid">
-
-                    <div class="services__item">
-                        <div class="icon__box">
-                            <img src="/assets/img/baidu-line.png" alt="" class="services__icon">
-                            <div class="services__dot">
-                                <span class="dot"></span>
-                            </div>
-                        </div>
-                        <h3 class="services__title text-lg">BESPET</h3>
-                        <p class="services__detail">
-                            Proyecto realizado en JAVA, sistema de informacion 
-                            para la gestion y organizacion de la peluqueria canina
-                            Titanes Peludos.
-                        </p>
-                    </div>
-
-                    <div class="services__item">
-                        <div class="icon__box">
-                            <img src="/assets/img/reactjs-fill.png" alt="" class="services__icon">
-                            <div class="services__dot">
-                                <span class="dot"></span>
-                            </div>
-                        </div>
-                        <h3 class="services__title text-lg">HOTELIA</h3>
-                        <p class="services__detail">
-                            Proyecto realizado en REACT, conexion a API 
-                            y funcionalidad CRUD.
-                        </p>
-                    </div>
-
-                    <div class="services__item">
-                        <div class="icon__box">
-                            <img src="/assets/img/folder-upload-line.png" alt="" class="services__icon">
-                            <div class="services__dot">
-                                <span class="dot"></span>
-                            </div>
-                        </div>
-                        <h3 class="services__title text-lg">PORTAFOLIO</h3>
-                        <p class="services__detail">
-                            Proyecto realizado en EXPRESS, portafolio donde 
-                            se encuentra mis datos personales, estudios, proyectos y 
-                            contacto.
-                        </p>
-                    </div>
-
-                    <div class="services__item">
-                        <div class="icon__box">
-                            <img src="/assets/img/shopping-cart-2-line.png" alt="" class="services__icon">
-                            <div class="services__dot">
-                                <span class="dot"></span>
-                            </div>
-                        </div>
-                        <h3 class="services__title text-lg">TIENDA</h3>
-                        <p class="services__detail">
-                            Proyecto realizado en LARAVEL, sistema que registra 
-                            productos y los lista con su respectiva imagen.
-                        </p>
-                    </div>
-
-                    <div class="services__item">
-                        <div class="icon__box">
-                            <img src="/assets/img/car-line.png" alt="" class="services__icon">
-                            <div class="services__dot">
-                                <span class="dot"></span>
-                            </div>
-                        </div>
-                        <h3 class="services__title text-lg">FORTUNE</h3>
-                        <p class="services__detail">
-                            Proyecto realizado en PHP, sistema para gestionar 
-                            la entrada de visitantes, novedades y parqueadero.
-                        </p>
-                    </div>
-
-                    <div class="services__item">
-                        <div class="icon__box">
-                            <img src="/assets/img/braces-line.png" alt="" class="services__icon">
-                            <div class="services__dot">
-                                <span class="dot"></span>
-                            </div>
-                        </div>
-                        <h3 class="services__title text-lg">JAVASCRIPT</h3>
-                        <p class="services__detail">
-                            Pagina realizada en JAVASCRIPT, permite realizar 
-                            diferentes tipos de calculos, juego de instructores y 
-                            validaciones de formulario.
-                        </p>
-                    </div>
-
-                </div>
-            </section>
-
             <div class="contenido">
 
-                <form method="post" action="GenerarReportes.jsp" target="_black" >
-                    <input type="submit" value="Alumnos Registrados">
-                    <input type="hidden" name="nomreporte" value="AlumnosReportes.jasper">
-                </form><br>
+                <div class="container arriba">
+                    <div>
+                        <header>Director</header>
 
-                <form method="post" action="GenerarReportesParametros.jsp" target="_black" >
+                        <div class="pag">
+                            <a href="director.jsp">Inicio</a>
+                        </div>
+                    </div>    
+                    <div class="boton">
+                        <form method="post" action="Sesiones">
 
-                    <input type="hidden" name="nomreporte" value="ReporteEmpleados.jasper">
+                            <input class="cs" type="submit" value="Cerrar Sesion">
 
-                    <select name="parametro" required>
-                        <option value="Director">Director</option>
-                        <option value="Profesor">Profesor</option>
-                    </select>
-                    <input type="submit" value="Alumnos Registrados">
-                </form>
+                        </form>  
+                    </div>
+
+                </div>
+                
+                <div>
+                    <h1>Paginas</h1>
+                </div>
+                <div class="cards">
+                    <div class="colu">
+                        <div class="uno">
+                            <img src="./assets/jardin/perfil.png" alt="imagen">
+                            <div class="info">
+                                <h4>Completar tu perfil</h4>
+                                <p>Llena un formulario con tus datos para mayor accesibilidad </p>
+                                <a href="perfil.jsp"><i class='bx bx-log-in-circle'></i>Ingresar</a>
+                            </div>
+                        </div>
+                        <div class="uno">
+                            <img src="./assets/jardin/archivo.png" alt="imagen">
+                            <div class="info">
+                                <h4>Matriculas</h4>
+                                <p>Listado de las matriculas que estan activas o inactivas </p>
+                                <a href="ConsultarMat2.jsp"><i class='bx bx-log-in-circle'></i>Ingresar</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div>
+                    <h1>Acciones</h1>
+                </div>
+                <div class="cards">
+                    <div class="colu">
+                        <div class="uno">
+                            <img src="./assets/jardin/estudiante.png" alt="imagen">
+                            <div class="info">
+                                <h4>Reportes Alumnos</h4>
+                                <p>Alumnos registrados </p>
+                                <form method="post" action="GenerarReportes.jsp" target="_black" >
+                                    <input class="inp" type="submit" value="Alumnos Registrados">
+                                    <input type="hidden" name="nomreporte" value="AlumnosReportes.jasper">
+                                </form>
+                            </div>
+                        </div>
+                        <div class="uno">
+                            <img src="./assets/jardin/empleados.png" alt="imagen">
+                            <div class="info">
+                                <h4>Reporte Empleados</h4>
+                                <p>Elige el cargo por que el se van alistar los empleados</p>
+                                <form method="post" action="GenerarReportesParametros.jsp" target="_black" >
+
+                                    <input class="inp" type="hidden" name="nomreporte" value="ReporteEmpleados.jasper">
+
+                                    <select name="parametro" required>
+                                        <option value="Director">Director</option>
+                                        <option value="Profesor">Profesor</option>
+                                    </select>
+                                    <input type="submit" value="Alumnos Registrados">
+                                </form>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
 
             </div>
 
