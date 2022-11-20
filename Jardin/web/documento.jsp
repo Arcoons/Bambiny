@@ -14,7 +14,7 @@
     <head>
         <!----======== CSS ======== -->
         <link href="Estilos/form1.css" rel="stylesheet" type="text/css"/>
-
+        <link href="Estilos/generales.css" rel="stylesheet" type="text/css"/>
         <!----===== Iconscout CSS ===== -->
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
@@ -23,7 +23,7 @@
         <title>Registrar Documento | Bambiny</title>
     </head>
     <body>
-   
+
         <%@include file="NavBar.jsp" %>
         <% 
             String id_usua = rolVO.getRolId();
@@ -36,86 +36,104 @@
             String id_alumn = alumVO.getId_alum();
 
         %>
-        
-         
+
+
         <section class="home">
-            <% if (request.getAttribute("MensajeError") != null) { %>
-            ${MensajeError}
+            <div class="contenido">
+                <div class="container arriba">
+                    <div>
+                        <header>Alumno</header>
 
-            <%} else {%>
-            ${MensajeExito}        
-            <%}%>
-            <div class="container">
-                <header>Registrar Documentos</header>
-                <form method="post" action="Document">
-                    <div class="form first">
-                        <div class="details personal">
-                            <span class="title">Datos Personales</span>
-
-                            <div class="fields">
-                                
-
-                                <div class="input-field">
-                                    <label>Tipo de documento</label>
-                                    <select name="texttipo_docu">
-                                        <option>Seleccione</option>
-                                        <option value="Registro Civil">Registro Civil</option>
-                                        <option value="Carnet Vacuna">Carnet de Vacunas</option>
-                                        <option value="Certificado EPS">Certificado EPS</option>
-                                        <option value="Vacuna Covid">Vacuna Covid</option>
-                                        <option value="Cedula Padres">Cedula Padres</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="input-field">
-                                    <label>Cargar Archivo</label>
-                                    <input type="file" name="textarchivo_docu" id="tipo" required onchange="return fileValidation()" >
-                                </div>
-                                 <div id="imagePreview"></div>
-                                
-                                
-                                
-                                
-                                
-                                
-                                <div class="input-field">
-                                 <input type="hidden" name="textarchivo_docu"  >
-                                </div>
-                                
-                                <div class="input-field">
-                                 <input type="hidden" name="textarchivo_docu"  >
-                                </div>
-                                
-                                <div class="input-field">
-                                 <input type="hidden" name="textarchivo_docu"  >
-                                </div>
-                                
-
-                                
-
-
-
-                            </div>
+                        <div class="pag">
+                            <a href="alumno.jsp">Inicio</a><p> >> </p><a href="documento.jsp" >Registrar Documentos</a>
                         </div>
+                    </div>    
+                    <div class="boton">
+                        <form method="post" action="Sesiones">
 
-                        <input type="hidden" name="textid_alum" value="<%= id_alumn %>"><br> 
+                            <input class="cs" type="submit" value="Cerrar Sesion">
 
-                        <button class="sumbit">
-                            <span class="btnText">Enviar</span>
-                            <i class="uil uil-navigator"></i>
-                        </button>
-                        <input type="hidden" value="1" name="opcion">
-                    </div> 
-                </form>
+                        </form>  
+                    </div>
+
+                </div>
+                <% if (request.getAttribute("MensajeError") != null) { %>
+                ${MensajeError}
+
+                <%} else {%>
+                ${MensajeExito}        
+                <%}%>
+                <div class="container">
+                    <header>Registrar Documentos</header>
+                    <form method="post" action="Document">
+                        <div class="form first">
+                            <div class="details personal">
+                                <span class="title">Datos Personales</span>
+
+                                <div class="fields">
+
+
+                                    <div class="input-field">
+                                        <label>Tipo de documento</label>
+                                        <select name="texttipo_docu">
+                                            <option>Seleccione</option>
+                                            <option value="Registro Civil">Registro Civil</option>
+                                            <option value="Carnet Vacuna">Carnet de Vacunas</option>
+                                            <option value="Certificado EPS">Certificado EPS</option>
+                                            <option value="Vacuna Covid">Vacuna Covid</option>
+                                            <option value="Cedula Padres">Cedula Padres</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="input-field">
+                                        <label>Cargar Archivo</label>
+                                        <input type="file" name="textarchivo_docu" id="tipo" required onchange="return fileValidation()" >
+                                    </div>
+                                    <div id="imagePreview"></div>
+
+
+
+
+
+
+                                    <div class="input-field">
+                                        <input type="hidden" name="textarchivo_docu"  >
+                                    </div>
+
+                                    <div class="input-field">
+                                        <input type="hidden" name="textarchivo_docu"  >
+                                    </div>
+
+                                    <div class="input-field">
+                                        <input type="hidden" name="textarchivo_docu"  >
+                                    </div>
+
+
+
+
+
+
+                                </div>
+                            </div>
+
+                            <input type="hidden" name="textid_alum" value="<%= id_alumn %>"><br> 
+
+                            <button class="sumbit">
+                                <span class="btnText">Enviar</span>
+                                <i class="uil uil-navigator"></i>
+                            </button>
+                            <input type="hidden" value="1" name="opcion">
+                        </div> 
+                    </form>
+                </div>
+
+
+
+
             </div>
+        </section>
 
 
-
-
-        </div>
-    </section>
-        
-        
         <script src="js/docu.js" type="text/javascript"></script>
     </body>
 </html>

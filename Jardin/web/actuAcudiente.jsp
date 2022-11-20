@@ -13,6 +13,7 @@
         <!----======== CSS ======== -->
         <link href="Estilos/form2.css" rel="stylesheet" type="text/css"/>
         <link href="Estilos/error.css" rel="stylesheet" type="text/css"/>
+        <link href="Estilos/generales.css" rel="stylesheet" type="text/css"/>
         <!----===== Iconscout CSS ===== -->
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
@@ -35,8 +36,24 @@
 
     %>
      <section class="home">
-    <h1>Acudiente</h1><br><br>
-    <a href="ListaActAcud.jsp">Volver</a>
+            <div class="contenido">
+                <div class="container arriba">
+                    <div>
+                        <header>Alumno</header>
+
+                        <div class="pag">
+                            <a href="alumno.jsp">Inicio</a><p> >> </p><a href="ListaActAcud.jsp">Listar Acudientes</a><p> >> </p><a >Actualizar Acudiente</a>
+                        </div>
+                    </div>    
+                    <div class="boton">
+                        <form method="post" action="Sesiones">
+
+                            <input class="cs" type="submit" value="Cerrar Sesion">
+
+                        </form>  
+                    </div>
+
+                </div>
         
         <%
             AcudienteVO2 acuVO = (AcudienteVO2) request.getAttribute("datosConsultados");
@@ -44,14 +61,7 @@
         %>
         
         <div class="container">
-                <%
-                if (request.getAttribute("mensajeError") != null) {%>
-
-                ${mensajeError}
-                <%} else {%>
-                ${mensajeExito}
-                <%}
-                %>
+                
                 <header>Acrualizar Acudiente</header>
                 <form method="post" action="Acudientes" id="regiAcu">
                     <div class="form first">

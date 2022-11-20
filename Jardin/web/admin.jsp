@@ -26,14 +26,14 @@
 
         <section class="home">
             <div class="contenido">
-                <div class="text">Dashboard Sidebar</div>
+              
 
                 <div class="container arriba">
                     <div>
                         <header>Administrador</header>
 
                         <div class="pag">
-                            <a href="admin.jsp">Inicio</a>
+                            <a href="MenuAdmin.jsp">Inicio</a><p>>></p><a href="admin.jsp" >Usuarios</a>
                         </div>
                     </div>    
                     <div class="boton">

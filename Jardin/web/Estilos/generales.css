@@ -21,13 +21,123 @@ and open the template in the editor.
     
 }
 
-.btn-est{
-    border: 2px solid peru;
-    border-radius: 8px;
-    background: pink;
-    padding-left: 10px;
-    padding-right: 10px;
+.cards{
+    /* background: white; */
+    display: flex;
+    /* padding: 0.5em; */
+    flex-direction: column;
+    border-radius: 15px;
 }
+
+.colu{
+    /* background-color: #ffffff; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-radius: 12px;
+}
+
+.uno{
+    background-color: #fdfdfd;
+    padding: 0.5em;
+    margin: 1em;
+    width: 15em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 26px;
+}
+
+.uno img{
+    width: 5em;
+}
+
+.info{
+    /* background-color: papayawhip; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.info h4{
+    font-size: 1.2em;
+    padding: 5px 0 5px 0;
+}
+
+.info a, .info button, .info .inp{
+    background: #f5896c;
+    padding: 0.5em;
+    margin: 6px 0 5px;
+    width: 50%;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    color: #ffff;
+}
+
+.info a i{
+        font-size: 1.5em;
+}
+
+.info button{
+    border: none;
+    width: auto;
+}
+
+
+.cowe{
+    /* background: paleturquoise; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.cowe img{
+    width: 20em;
+    margin: 0 1em;
+}
+
+.infow{
+    background: white;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    /* width: 100%; */
+    padding: 2em 8em 2em 2em;
+    margin: 1em;
+    border-radius: 0em 3em 3em 0em;
+}
+
+.infow h1{
+    color: #b94322;
+    font-size: 3em;
+    margin-bottom: 0.2em;
+}
+
+.infow h4{
+    color: #18191a;
+    margin-bottom: 5px;
+}
+
+.infow hr{
+    /* border-color: #ff6f6f; */
+    width: 112%;
+    height: 3px;
+    background: #ff6f6f;
+    border: none;
+    border-radius: 7px;
+    margin-bottom: 12px;
+}
+
+.infow p{
+    color: #032c54;
+}
+
+
 
 .bn60 {
     background-color: #8bc4d3;
@@ -104,6 +214,7 @@ and open the template in the editor.
 .arriba{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .container{

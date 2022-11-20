@@ -20,6 +20,7 @@
         <!----======== CSS ======== -->
         <link href="Estilos/form2.css" rel="stylesheet" type="text/css"/>
         <link href="Estilos/error.css" rel="stylesheet" type="text/css"/>
+        <link href="Estilos/generales.css" rel="stylesheet" type="text/css"/>
         <!----===== Iconscout CSS ===== -->
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -47,6 +48,25 @@
 
 
         <section class="home">
+            <div class="contenido">
+
+                <div class="container arriba">
+                    <div>
+                        <header>Alumno</header>
+
+                        <div class="pag">
+                            <a href="alumno.jsp">Inicio</a><p> >> </p><a href="regAlumno.jsp" >Registrarse</a>
+                        </div>
+                    </div>    
+                    <div class="boton">
+                        <form method="post" action="Sesiones">
+
+                            <input class="cs" type="submit" value="Cerrar Sesion">
+
+                        </form>  
+                    </div>
+
+                </div>
             <% if (request.getAttribute("MensajeError") != null) { %>
             ${MensajeError}
 

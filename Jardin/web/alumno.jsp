@@ -13,10 +13,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="Estilos/director.css">
+        <link href="Estilos/form1.css" rel="stylesheet" type="text/css"/>
+        <link href="Estilos/generales.css" rel="stylesheet" type="text/css"/>
         <link rel="icon" type="image/x-icon" href="assets/jardin/IconoNegro.ico">
         <title>Alumno | Bambiny</title>
-        
+
     </head>
     <body>
 
@@ -36,34 +37,99 @@
 
         <section class="home">
             <div class="contenido">
-                <h1>ALUMNO</h1>
-                <a href="regAlumno.jsp">Registrar alumno</a><br>
+                
+                <div class="">
+                    <div class="cowe">
+                      
+                        <div class="infow">
+                            <h1>Bienvenido</h1>
+                            <h4>A nuestro sistema de matriculas Bambiny</h4>
+                            <hr>
+                            <p>Para comenzar la inscripcion da click en los botones "ingresar" que encontras en la parte
+                            de abajo, presta atencion a los mensajes en cada uno de ellos</p>
+                        </div>
+                        
+                    </div>
+                </div>
 
-                <a href="familiar.jsp">Registrar familiar</a><br>
-                <a href="Acudiente.jsp">Registrar Acudiente</a><br>
-                <a href="documento.jsp">Registrar documento</a><br>
-                <hr>
-           
-                <form action="Alumno" method="post">
+                <div class="cards">
+                    <div class="colu">
+                        <div class="uno">
+                            <img src="./assets/jardin/Ralumno.png" alt="imagen">
+                            <div class="info">
+                                <h4>Registrar Alumno</h4>
+                                <p>Llena el formulario de registro con los datos del alumno</p>
+                                <a href="regAlumno.jsp">
+                                    <i class='bx bx-log-in-circle'></i>
+                                    Ingresar
+                                </a> 
+                            </div>
+                        </div>
+                        <div class="uno">
+                            <img src="./assets/jardin/Rfamilia.png" alt="imagen">
+                            <div class="info">
+                                <h4>Registrar Familiar</h4>
+                                <p>Registra a el adulto mayor que se encarga de ti</p>
+                                <a href="familiar.jsp"><i class='bx bx-log-in-circle'></i>Ingresar</a> 
+                            </div>
+                        </div>
+                        <div class="uno">
+                            <img src="./assets/jardin/Racu.png" alt="imagen">
+                            <div class="info">
+                                <h4>Registrar Acudiente</h4>
+                                <p>Registra a las personas que pueden recoger al alumno </p>
+                                <a href="Acudiente.jsp"><i class='bx bx-log-in-circle'></i>Ingresar</a> 
+                            </div>
+                        </div>
+                        <div class="uno">
+                            <img src="./assets/jardin/Rdocu.png" alt="imagen">
+                            <div class="info">
+                                <h4>Registrar Documentos</h4>
+                                <p>Registra todos tus documentos personales</p>
+                                <a href="documento.jsp"><i class='bx bx-log-in-circle'></i>Ingresar</a> 
+                            </div>
+                        </div>
+                    </div>
 
-                    <button name="textid_alum" value="<%= id_alumn%>"  >Actualizar Alumno</button>
-                    <input name="opcion" value="2" type="hidden">
-                </form>
-
-
-
-
-                <br>
-                <a href="listarDocumentos.jsp">actualizar documento</a><br>
-                <a href="ListaActAcud.jsp">actualizar Acudiente</a><br>
-                <a href="listarFamiliar.jsp">actualizar Familiar</a><br>
-
-                <a href="form.jsp">form </a><br>
-                <a href="Archivo.jsp">ARCHIVO </a><br>
-                <br>
-
-                <br>
-
+                    <div class="colu">
+                        <div class="uno">
+                            <img src="./assets/jardin/Aalu.png" alt="imagen">
+                            <div class="info">
+                                <h4>Actualizar Alumno</h4>
+                                <p>Actauliza tus datos si han cambiado</p>
+                                <form action="Alumno" method="post">
+                                    
+                                    <button name="textid_alum" value="<%= id_alumn%>" ><i class='bx bx-log-in-circle'></i>Ingresar</button>
+                                    <input name="opcion" value="2" type="hidden">
+                                </form>
+                            </div>
+                        </div>
+                        <div class="uno">
+                            <img src="./assets/jardin/editar.png" alt="imagen">
+                            <div class="info">
+                                <h4>Actualizar Familiar</h4>
+                                <p>Actualiza los datos tus adultos encargados de ti</p>
+                                <a href="listarFamiliar.jsp"><i class='bx bx-log-in-circle'></i>Ingresar</a> 
+                            </div>
+                        </div>
+                        <div class="uno">
+                            <img src="./assets/jardin/editar.png" alt="imagen">
+                            <div class="info">
+                                <h4>Actualizar Acudiente</h4>
+                                <p>Actualiza la informacion o cambia la autorizacion de tus acudientes</p>
+                                <a href="ListaActAcud.jsp"><i class='bx bx-log-in-circle'></i>Ingresar</a> 
+                            </div>
+                        </div>
+                        <div class="uno">
+                            <img src="./assets/jardin/Adocu.png" alt="imagen">
+                            <div class="info">
+                                <h4>Actualizar Documentos</h4>
+                                <p>Actauliza los documentos que sean necesarios</p>
+                                <a href="listarDocumentos.jsp"><i class='bx bx-log-in-circle'></i>Ingresar</a> 
+                            </div>
+                        </div>
+                    </div>
+                </div>            
 
             </div>
 

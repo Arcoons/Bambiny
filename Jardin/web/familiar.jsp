@@ -14,6 +14,7 @@
     <head>
         <link href="Estilos/form2.css" rel="stylesheet" type="text/css"/>
         <link href="Estilos/error.css" rel="stylesheet" type="text/css"/>
+        <link href="Estilos/generales.css" rel="stylesheet" type="text/css"/>
         <!----===== Iconscout CSS ===== -->
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
@@ -34,7 +35,25 @@
             String id_alumn = alumVO.getId_alum();
 
         %>
-        <section class="home">
+       <section class="home">
+            <div class="contenido">
+                <div class="container arriba">
+                    <div>
+                        <header>Alumno</header>
+
+                        <div class="pag">
+                            <a href="alumno.jsp">Inicio</a><p> >> </p><a href="familiar.jsp" >Registrar Familiar</a>
+                        </div>
+                    </div>    
+                    <div class="boton">
+                        <form method="post" action="Sesiones">
+
+                            <input class="cs" type="submit" value="Cerrar Sesion">
+
+                        </form>  
+                    </div>
+
+                </div>
             <% if (request.getAttribute("MensajeError") != null) { %>
             ${MensajeError}
 
@@ -42,12 +61,6 @@
             ${MensajeExito}        
             <%}%>
 
-            <% if (request.getAttribute("MensajeErrorConsulta") != null) { %>
-            ${MensajeError}
-
-            <%} else {%>
-            ${MensajeConsulta}        
-            <%}%>
             <div class="container">
                 <header>Registrar tutor legal</header>
                 <form method="post" action="Familiar"id="regiFami">

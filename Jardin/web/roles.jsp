@@ -56,9 +56,15 @@
                     <ul class="menu-links">
 
                         <li class="nav-links">
-                            <a href="admin.jsp">
+                            <a href="MenuAdmin.jsp">
                                 <i class="bx bx-home-alt icon" ></i>
                                 <span class="text nav-text">Inicio</span>
+                            </a>
+                        </li>    
+                        <li class="nav-links">
+                            <a href="admin.jsp">
+                                <i class='bx bxs-group icon'></i>
+                                <span class="text nav-text">Usuarios</span>
                             </a>
                         </li>
                         <li class="nav-links">
@@ -114,71 +120,99 @@
 
 
         <section class="home">
-            
-            <%
-                    if (request.getAttribute("mensajeError") != null) { %>
+            <div class="contenido">
+
+
+                <div class="container arriba">
+                    <div>
+                        <header>Administrador</header>
+
+                        <div class="pag">
+                            <a href="MenuAdmin.jsp">Inicio</a><p>>></p><a href="admin.jsp" >Usuarios</a><p>>></p><a >Asignar Rol</a>
+                        </div>
+                    </div>    
+                    <div class="boton">
+                        <form method="post" action="Sesiones">
+
+                            <input class="cs" type="submit" value="Cerrar Sesion">
+
+                        </form>  
+                    </div>
+
+                </div>
+
+
+                <div class="container cont">
+                    <%
+                        if (request.getAttribute("mensajeError") != null) { %>
                     ${mensajeError}
 
                     <%} else {%>
                     ${mensajeExito}        
                     <%}%>
-            <div class="container">
-                <header>Asignar Rol</header>
-                <form method="post" action="Usuario">
-                    <div class="form first">
-                        <div class="details personal">
-                            <span class="title">Usuario</span>
+                    <div>
+                        <header>Asignar Rol</header>
+                        <form method="post" action="Usuario">
+                            <div class="form first">
+                                <div class="details personal">
+                                    <span class="title">Usuario</span>
 
 
-                            <div class="user-box">
-                                <h2><%=request.getAttribute("loginUsuario")%></h2><br>
-                            </div>
+                                    <div class="user-box">
+                                        <h2><%=request.getAttribute("loginUsuario")%></h2><br>
+                                    </div>
 
-                            <div class="user-box">
-                                <h2><%=request.getAttribute("estadoUsuario")%></h2><br>
-                            </div>
+                                    <div class="user-box">
+                                        <h2><%=request.getAttribute("estadoUsuario")%></h2><br>
+                                    </div>
 
-                            <div class="fields">
+                                    <div class="fields">
 
 
-                                <div class="input-field">
-                                    <label>Roles</label>
-                                    <select name="rol">
-                                        <option>Elija el rol</option>
-                                        <%
-                                            RolVO rolVO = new RolVO();
-                                            RolDAO rolDAO = new RolDAO();
-                                            ArrayList<RolVO> listarRoles = rolDAO.listarRoles();
-                                            for (int i = 0; i < listarRoles.size(); i++) {
+                                        <div class="input-field">
+                                            <label>Roles</label>
+                                            <select name="rol">
+                                                <option>Elija el rol</option>
+                                                <%
+                                                    RolVO rolVO = new RolVO();
+                                                    RolDAO rolDAO = new RolDAO();
+                                                    ArrayList<RolVO> listarRoles = rolDAO.listarRoles();
+                                                    for (int i = 0; i < listarRoles.size(); i++) {
 
-                                                rolVO = listarRoles.get(i);
+                                                        rolVO = listarRoles.get(i);
 
-                                        %>
-                                        <option value="<%=rolVO.getRolId()%>"><%=rolVO.getRolTiPo()%></option>
-                                        <%
-                                            }
-                                        %>
-                                    </select>
+                                                %>
+                                                <option value="<%=rolVO.getRolId()%>"><%=rolVO.getRolTiPo()%></option>
+                                                <%
+                                                    }
+                                                %>
+                                            </select>
+                                        </div>
+
+
+                                    </div>
                                 </div>
 
 
-                            </div>
-                        </div>
 
+                                <button class="sumbit button">
+                                    <span class="btnText">Enviar</span>
+                                    <i class="uil uil-navigator"></i>
+                                </button>
+                                <input type="hidden" value="<%=request.getAttribute("idUsuario")%>" name="usuarioID">
+                                <input type="hidden" value="9" name="opcion">
+                            </div> 
+                        </form>
+                    </div>
+                    <div class="avatar">
+                        <img class="img" src="./assets/jardin/sign.svg" alt="avatar">
+                    </div>
+                </div>
 
-
-                        <button class="sumbit">
-                            <span class="btnText">Enviar</span>
-                            <i class="uil uil-navigator"></i>
-                        </button>
-                        <input type="hidden" value="<%=request.getAttribute("idUsuario")%>" name="usuarioID">
-                        <input type="hidden" value="9" name="opcion">
-                    </div> 
-                </form>
             </div>
 
         </section>
-
+                                <script src="js/form.js" type="text/javascript"></script>
 
     </body>
 </html>
