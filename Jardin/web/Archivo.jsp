@@ -13,29 +13,12 @@
     </head>
     <body>
         <h1>Hello World!</h1>
-
-        <form method="POST" action="uploadFile" enctype="multipart/form-data" >  
-            File:  
-            <input type="file" name="file" id="file" />  
-            <br/>  
-            <br/>  
-            Destination:  
-            <input type="file" name="file"/>  
-            <br/>  
-            <br/>  
-            <input type="submit" value="upload" name="upload"/>  
-        </form>
-        
-        <form method="POST" action="uploadFile" enctype="multipart/form-data" >  
-            File:  
-            <input type="file" name="file" id="file" />  
-            <br/>  
-            <br/>  
-            Destination:  
-            <input type="file" name="file"/>  
-            <br/>  
-            <br/>  
-            <input type="submit" value="upload" name="upload"/>  
+        <a href="alumno.jsp">Volver</a>
+        <form name="upload" action="UploadFileServlet" method="POST" enctype="multipart/form-data">
+            <br>
+            Documento: <input type="file" name="file">
+            <br><br>
+            <input type="submit" value="upload" name="upload">
         </form>
     </body>
 </html>

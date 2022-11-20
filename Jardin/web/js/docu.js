@@ -26,7 +26,7 @@ function fileValidation(){
         if (fileInput.files && fileInput.files[0]) {
             const    reader = new FileReader();
             reader.onload = function(e) {
-                document.getElementById('imagePreview').innerHTML = '<img src="'+e.target.result+'"/>';
+                document.getElementById('imagePreview').innerHTML = '<iframe src="'+e.target.result+'"/>';
             };
             reader.readAsDataURL(fileInput.files[0]);
         }

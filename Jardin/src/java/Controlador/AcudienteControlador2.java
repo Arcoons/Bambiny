@@ -14,7 +14,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -35,7 +34,7 @@ public class AcudienteControlador2 extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-
+        
         // 1. Recibir datos de las vistas
         String ID_ACUD = request.getParameter("textID_acud");
         String ID_ALUM = request.getParameter("textId_alum");
@@ -64,7 +63,7 @@ public class AcudienteControlador2 extends HttpServlet {
 
             case 1: // consular acudiente
                 String alum_id = request.getParameter("Id");
-                AcuVO2 = AcuDAO2.listar(alum_id);
+                AcuVO2 = AcuDAO2.consultarAcudientes(alum_id);
 
                 if (AcuVO2 != null) {
                     request.setAttribute("datosConsultados", AcuVO2);
@@ -76,16 +75,13 @@ public class AcudienteControlador2 extends HttpServlet {
                 break;
 
             case 2:
-                
+                if (AcuDAO2.agregarRegistro()) {
+                    request.setAttribute("mensajeExito", "Se registro");
 
-                    if (AcuDAO2.agregarRegistro()) {
-                        request.setAttribute("mensajeExito", "Se registro");
+                } else {
+                    request.setAttribute("mensajeError", "No se registro");
 
-                    } else {
-                        request.setAttribute("mensajeError", "No se registro");
-
-                    }
-                
+                }
                 request.getRequestDispatcher("Acudiente.jsp").forward(request, response);
 
                 break;

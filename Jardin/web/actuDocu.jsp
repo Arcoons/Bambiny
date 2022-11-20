@@ -20,7 +20,8 @@
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <link rel="icon" type="image/x-icon" href="assets/jardin/IconoNegro.ico">
+        <title>Actualizar Documentos | Bambiny</title>
     </head>
     <body>
         <%@include file="NavBar.jsp" %>
@@ -34,7 +35,7 @@
             %>
 
             <div class="container">
-                <header>Registration</header>
+                <header>Actualizar Documento</header>
                 <form method="post" action="Document">
                     <div class="form first">
                         <div class="details personal">
@@ -49,14 +50,20 @@
 
                                 <div class="input-field">
                                     <label>Cargar Archivo</label>
-                                    <input type="file" name="textarchivo_docu" id="tipo" onchange="return fileValidation()" value=" <%= doVO.getArchivo_docu()%>" >
+                                    <input type="file" name="textarchivo_docu" value=" <%= doVO.getArchivo_docu()%>" >
                                 </div>
 
                                 <div class="input-field">
                                     <input type="hidden" name="textarchivo_docu"  >
                                 </div>
 
-                               
+                                <div class="input-field">
+                                    <input type="hidden" name="textarchivo_docu"  >
+                                </div>
+
+                                <div class="input-field">
+                                    <input type="hidden" name="textarchivo_docu"  >
+                                </div>
 
                             </div>
                         </div>
@@ -85,7 +92,7 @@
         </section>
 
 
- <script src="js/docu.js" type="text/javascript"></script>
+
 
     </body>
 </html>

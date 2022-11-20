@@ -1,9 +1,3 @@
-<%-- 
-    Document   : AcudienteVO
-    Created on : 6/09/2022, 09:45:34 PM
-    Author     : solan
---%>
-
 <%@page import="ModeloVO.RolVO"%>
 <%@page import="ModeloDAO.RolDAO"%>
 <%@page import="ModeloDAO.AlumnoDAO"%>
@@ -61,7 +55,7 @@
                                 <div class="input-field">
                                     <label>Primer Nombre</label>
                                     <input type="text" name="textNom_acud1" placeholder="Escribe tu nombre" id="nom"></i>
-                           <p id="error2" class="error1">El campo solo acepta letras, minimo 3 letras</p>
+                           <p id="error1" class="error1">El campo solo acepta letras, minimo 3 letras</p>
                                 </div>
 
                                 <div class="input-field">

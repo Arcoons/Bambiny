@@ -13,8 +13,8 @@
  *            Non-commercial use permitted under same terms as CC BY-NC 3.0 license.
  *            http://creativecommons.org/licenses/by-nc/3.0/
  */
-const formu = document.getElementById('regiAcu');
-const imputs = document.querySelectorAll('#regiAcu input');
+const formu = document.getElementById('regiFami');
+const imputs = document.querySelectorAll('#regiFami input');
 
 //Objetos con expresion regulares para validaciòn
 const vali = {
@@ -32,13 +32,16 @@ const campos = {
     nom2: false,
     apel2: false,
     cedu: false,
-    cel: false
+    cel: false,
+    ocu: false,
+    tra: false,
+    nutra: false
 
 };
 
 const acudi = (e) => {
     switch (e.target.name) {
-        case "textNom_acud1":
+        case "textnom1_fami":
             if (vali.nombre.test(e.target.value)) {
                 document.getElementById('error1').classList.remove('error');
                 document.getElementById('nom').classList.add('correct');
@@ -52,7 +55,7 @@ const acudi = (e) => {
                 campos['nom'] = false;
             }
             break;
-        case "textApel_acud1":
+        case "textapel1_fami":
             if (vali.nombre.test(e.target.value)) {
                 document.getElementById('error2').classList.remove('error');
                 document.getElementById('apel').classList.add('correct');
@@ -66,7 +69,7 @@ const acudi = (e) => {
                 campos['apel'] = false;
             }
             break;
-        case "textFechnaci_acud":
+        case "textfechnaci_fami":
 
             let fechaA = new Date();
             const ano = parseInt(fechaA.getFullYear());
@@ -90,8 +93,9 @@ const acudi = (e) => {
                 campos['na'] = false;
             }
             break;
-        case "textNom_acud2":
+        case "textnom2_fami":
             if (vali.nombre.test(e.target.value)) {
+                
                 document.getElementById('error4').classList.remove('error');
                 document.getElementById('nom2').classList.add('correct');
                 document.getElementById('nom2').classList.remove('incorrect');
@@ -104,7 +108,7 @@ const acudi = (e) => {
                 campos['nom2'] = false;
             }
             break;
-        case "textApel_acud2":
+        case "textapel2_fami":
             if (vali.nombre.test(e.target.value)) {
                 document.getElementById('error5').classList.remove('error');
                 document.getElementById('apel2').classList.add('correct');
@@ -118,7 +122,7 @@ const acudi = (e) => {
                 campos['apel2'] = false;
             }
             break;
-        case "textNumdocu_acud":
+        case "textnumdocu_fami":
             if (vali.numeros.test(e.target.value)) {
                 document.getElementById('error6').classList.remove('error');
                 document.getElementById('cedu').classList.add('correct');
@@ -133,7 +137,7 @@ const acudi = (e) => {
             }
             break;
     
-        case "textTele_acud":
+        case "texttelecel_fami":
             if (vali.numeros.test(e.target.value)) {
                 document.getElementById('error7').classList.remove('error');
                 document.getElementById('cel').classList.add('correct');
@@ -147,15 +151,61 @@ const acudi = (e) => {
                 campos['cel'] = false;
             }
             break;
+            case "textocupac_fami":
+            if (vali.nombre.test(e.target.value)) {
+                document.getElementById('error8').classList.remove('error');
+                document.getElementById('ocu').classList.add('correct');
+                document.getElementById('ocu').classList.remove('incorrect');
+                campos['cel'] = true;
+            } else {
+                const error=document.getElementById('error8');
+                error.classList.add('error');
+                document.getElementById('ocu').classList.add('incorrect');
+                document.getElementById('ocu').classList.remove('correct');
+                campos['cel'] = false;
             }
-        };
+            break;
+            case "textlugatrab_fami":
+            if (vali.nombre.test(e.target.value)) {
+                document.getElementById('error9').classList.remove('error');
+                document.getElementById('tra').classList.add('correct');
+                document.getElementById('tra').classList.remove('incorrect');
+                campos['cel'] = true;
+            } else {
+                const error=document.getElementById('error9');
+                error.classList.add('error');
+                document.getElementById('tra').classList.add('incorrect');
+                document.getElementById('tra').classList.remove('correct');
+                campos['cel'] = false;
+            }
+            break;
+            case "textlugatrab_fami":
+            if (vali.nombre.test(e.target.value)) {
+                document.getElementById('error10').classList.remove('error');
+                document.getElementById('nutra').classList.add('correct');
+                document.getElementById('nutra').classList.remove('incorrect');
+                campos['cel'] = true;
+            } else {
+                const error=document.getElementById('error10');
+                error.classList.add('error');
+                document.getElementById('nutra').classList.add('incorrect');
+                document.getElementById('nutra').classList.remove('correct');
+                campos['cel'] = false;
+            }
+            break;
+            }
+        }
             imputs.forEach((campo) => {
                 campo.addEventListener('keyup', acudi);
                 campo.addEventListener('blur', acudi);
                 
                 console.log('click');
         });
-        if(campos.nom && campos.apel && campos.na && campos.nom2 && campos.apel2 && campos.cedu && campos.cel){
+         formu.addEventListener('.sumbit',(e)=>{
+
+        e.preventDefault();
+       
+        if(campos.nom && campos.apel && campos.na && campos.nom2 && campos.apel2 && campos.cedu && campos.cel && campos.nutra&& campos.ocu&& campos.tra ){
             
             document.getElementById('exito').classList.add('succes');
             document.getElementById('uError').classList.remove('Perror');

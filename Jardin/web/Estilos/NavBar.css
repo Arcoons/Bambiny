@@ -1,32 +1,4 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 15-nov-2022, 21:33:01
-    Author     : yoang
-*/
 
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 08-nov-2022, 14:02:06
-    Author     : yoang
-*/
-
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 29-oct-2022, 20:43:48
-    Author     : yoang
-*/
 
 /* Google Font Import - Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
@@ -363,3 +335,9 @@ body.dark .home .text{
     color: var(--text-color);
 }
 
+@media (max-width: 425px) {
+    .sidebar.close{
+        display: none;
+        
+    }
+}

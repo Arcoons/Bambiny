@@ -12,71 +12,93 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="Estilos/generales.css" rel="stylesheet" type="text/css"/>
-       <!----======== CSS ======== -->
-        <link href="Estilos/form1.css" rel="stylesheet" type="text/css"/>
 
+        <link href="Estilos/generales.css" rel="stylesheet" type="text/css"/>
+        <!----======== CSS ======== -->
+        <link href="Estilos/form1.css" rel="stylesheet" type="text/css"/>
+        <link href="Estilos/error.css" rel="stylesheet" type="text/css"/>
         <!----===== Iconscout CSS ===== -->
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+        <link rel="icon" type="image/x-icon" href="assets/jardin/IconoNegro.ico">
+        <title>Administrador | Bambiny</title>
 
         <title>Registrar</title>
 
     </head>
     <body>   
         <%@include file="NavBar.jsp" %>
-         <%
-                if (request.getAttribute("mensajeError") != null) { %>
-            
-                <h5 class="msgError" >${mensajeError}</h5>  
 
-            <%} else {%>
-            <h5 class="msgSucces" >${mensajeExito}</h5>  
-            <script>
-                alert("Hello world!");
-                window.swal("holi");
-                swal("${mensajeExito}");
-                
-            </script>
-            <%}%>
         <section class="home">
             <div class="contenido">
-            
-                <div class="container">
-                <header>Registrar Usuario</header>
-                <form method="post" action="Usuario">
-                    <div class="form first">
-                        <div class="details personal">
-                            <span class="title">Datos Personales</span>
+                <%                    if (request.getAttribute("mensajeError") != null) { %>
 
-                            <div class="fields">
-                                <div class="input-field">
-                                    <label>Correo Electronico</label>
-                                    <input type="email" name="textLogin" placeholder="Corro@email.com" >
-                                </div>
+                <h5 class="msgError" >${mensajeError}</h5>  
 
-                                <div class="input-field">
-                                    <label>Contraseña</label>
-                                    <input type="password" name="textPassword" placeholder="******" >
-                                </div>
-                                
-                                <div class="input-field">
-                                    
-                                    <input type="hidden" name="textPassword" placeholder="******" >
-                                </div>
+                <%} else {%>
+                <h5 class="msgSucces" >${mensajeExito}</h5>  
 
-                            </div>
+                <%}%>
+
+                <div class="container arriba">
+                    <div>
+                        <header>Administrador</header>
+
+                        <div class="pag">
+                            <a href="admin.jsp">Inicio</a><p> >> </p><a href="registrarUsuario.jsp" >Registrar Usuario</a>
                         </div>
+                    </div>    
+                    <div class="boton">
+                        <form method="post" action="Sesiones">
 
-                        <button class="sumbit">
-                            <span class="btnText">Enviar</span>
-                            <i class="uil uil-navigator"></i>
-                        </button>
-                        <input type="hidden" value="1" name="opcion">
-                    </div> 
-                </form>
-            </div>
-                
+                            <input class="cs" type="submit" value="Cerrar Sesion">
+
+                        </form>  
+                    </div>
+
+                </div>
+
+                <div class="container cont">
+                    <div>
+                        <header>Registrar Usuario</header>
+                        <form method="post" action="Usuario" id="loUsu">
+                            <div class="form first">
+                                <div class="details personal">
+                                    <span class="title">Datos Personales</span>
+
+                                    <div class="fields">
+                                        <div class="input-field">
+                                            <label>Correo Electronico</label>
+                                            <input type="email" name="textLogin" placeholder="Corro@email.com" required id="cor">
+                                            <p id="error1" class="error1">Debe ser un correo valido</p>
+                                        </div>
+
+                                        <div class="input-field">
+                                            <label>Contraseña</label>
+                                            <input type="password" name="textPassword" placeholder="******" required id="con">
+                                            <p id="error2" class="error2">Minimo 4 caracteres</p>
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+
+                                <button class="sumbit">
+                                    <span class="btnText">Enviar</span>
+                                    <i class="uil uil-navigator"></i>
+                                </button>
+                                <input type="hidden" value="1" name="opcion">
+                            </div> 
+                        </form>
+                    </div>
+                    <div class="avatar">
+                        <img class="img" src="./assets/jardin/avatar1.svg" alt="avatar">
+                    </div>
+                </div>
+
             </div>
         </section>
+        <script src="js/navbar.js" type="text/javascript"></script>
+        <script src="js/usu.js" type="text/javascript"></script>
     </body>
 </html>

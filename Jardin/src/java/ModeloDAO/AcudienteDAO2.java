@@ -53,40 +53,8 @@ public class AcudienteDAO2 extends ConexionBd implements Crud{
             Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, e);
         }
     }
-     public ArrayList<AcudienteVO2> listar(String alum_id) {
-        ArrayList<AcudienteVO2> listaAcu = new ArrayList<>();
-        try {
-            conexion = this.obtenerConexion();
-            sql="SELECT * FROM acudientes AS acu INNER JOIN alumno AS alu ON acu.ID_ALUM = alu.ID_ALUM WHERE alu.ID_ALUM=2;";
-            puente = conexion.prepareStatement(sql);
-            puente.setString(1, alum_id);
-            mensajero = puente.executeQuery();
-            while (mensajero.next()) {
-
-             AcudienteVO2 AcuVO2 = new AcudienteVO2(mensajero.getString(1), mensajero.getString(2), mensajero.getString(3), 
-                           mensajero.getString(4), mensajero.getString(5), mensajero.getString(6), mensajero.getString(7), 
-                           mensajero.getString(8), mensajero.getString(9), mensajero.getString(10), 
-                           mensajero.getString(11),mensajero.getString(12),mensajero.getString(13));
-              listaAcu.add(AcuVO2);
-              
-            }
-
-        } catch (SQLException e) {
-            Logger.getLogger(AcudienteDAO2.class.getName()).log(Level.SEVERE, null, e);
-        } finally {
-            try {
-                this.deneterConexion();
-            } catch (SQLException e) {
-                Logger.getLogger(AcudienteDAO2.class.getName()).log(Level.SEVERE, null, e);
-            }
-        }
-        return listaAcu;
-    }
-   /**     public AcudienteVO2 consultarAcu(String alum_id) {  
+        public AcudienteVO2 consultarAcudientes(String alum_id) {  
             ArrayList<AcudienteVO2> consultarAcudientes = new ArrayList<>();
-            int i;
-            for(i=0;i<consultarAcudientes.size();i++);
-            consultarAcu=consultarAcudientes;
            AcudienteVO2 AcuVO2 = null;
            try {
                conexion = this.obtenerConexion();
@@ -107,7 +75,7 @@ public class AcudienteDAO2 extends ConexionBd implements Crud{
                    consultarAcudientes.add(AcuVO2);
                    
                }
-               
+
            } catch (SQLException e) {
                Logger.getLogger(AcudienteDAO2.class.getName()).log(Level.SEVERE, null, e);
            } finally {
@@ -119,7 +87,7 @@ public class AcudienteDAO2 extends ConexionBd implements Crud{
            }
            return AcuVO2;
        }
-    **/
+    
 
     @Override
     public boolean agregarRegistro() {

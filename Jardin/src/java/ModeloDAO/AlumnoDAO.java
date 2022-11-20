@@ -202,7 +202,7 @@ public class AlumnoDAO extends ConexionBd implements Crud {
             }
         }
 
-        return aluVO;
+        return aluVO;   
     }
 
     public AlumnoVO consultarAlumno(String id_usua) {

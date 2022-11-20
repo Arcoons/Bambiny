@@ -19,7 +19,8 @@
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <link rel="icon" type="image/x-icon" href="assets/jardin/IconoNegro.ico">
+        <title>Registrar Documento | Bambiny</title>
     </head>
     <body>
    
@@ -45,7 +46,7 @@
             ${MensajeExito}        
             <%}%>
             <div class="container">
-                <header>Registration</header>
+                <header>Registrar Documentos</header>
                 <form method="post" action="Document">
                     <div class="form first">
                         <div class="details personal">
@@ -68,10 +69,9 @@
                                 
                                 <div class="input-field">
                                     <label>Cargar Archivo</label>
-                                    <input type="file" name="textarchivo_docu" id="tipo" onchange="return fileValidation()">
+                                    <input type="file" name="textarchivo_docu" id="tipo" required onchange="return fileValidation()" >
                                 </div>
-                                <div id="imagePreview"></div>
-                                
+                                 <div id="imagePreview"></div>
                                 
                                 
                                 
@@ -81,6 +81,20 @@
                                 <div class="input-field">
                                  <input type="hidden" name="textarchivo_docu"  >
                                 </div>
+                                
+                                <div class="input-field">
+                                 <input type="hidden" name="textarchivo_docu"  >
+                                </div>
+                                
+                                <div class="input-field">
+                                 <input type="hidden" name="textarchivo_docu"  >
+                                </div>
+                                
+
+                                
+
+
+
                             </div>
                         </div>
 
@@ -102,6 +116,6 @@
     </section>
         
         
-                        <script src="js/docu.js" type="text/javascript"></script>
+        <script src="js/docu.js" type="text/javascript"></script>
     </body>
 </html>

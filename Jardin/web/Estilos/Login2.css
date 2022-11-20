@@ -1,17 +1,38 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 18/11/2022, 09:45:22 AM
+    Author     : Sena
+*/
 
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 17-nov-2022, 23:39:56
+    Author     : yoang
+*/
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 08-nov-2022, 15:14:54
+    Author     : yoang
+*/
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
 
-html{
-    font-family: 'Alice', serif;
-    background-repeat: no-repeat;
-    background-image: url(../img/bg.jpg);
-    background-size: cover;
-    overflow: hidden;
-    
-}
+
 
 h1{
     font-family: 'Poppins', sans-serif;
@@ -77,6 +98,12 @@ h1{
     transform: translateY(-50%);
     }
 
+    #booking {
+    font-family: 'Alice', serif;
+    background-repeat: no-repeat;
+    background-image: url(../img/bg.jpg);
+    background-size: cover;
+    }
 
     .booking-form {
     font-family: 'Poppins', sans-serif;

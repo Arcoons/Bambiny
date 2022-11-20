@@ -59,7 +59,7 @@ public class MatriculaControlador extends HttpServlet {
                     request.getRequestDispatcher("ConsultarDocumentos.jsp").forward(request, response);
 
                 } else {
-                    request.setAttribute("mensajeError", "la matricula  se pudo encontrar");
+                    request.setAttribute("mensajeError", "la matricula no se pudo encontrar");
                     request.getRequestDispatcher("ConsultarMat2.jsp").forward(request, response);
 
                 }

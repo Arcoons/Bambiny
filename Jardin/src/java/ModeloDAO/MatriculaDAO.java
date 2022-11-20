@@ -158,7 +158,7 @@ public class MatriculaDAO extends ConexionBd implements Crud {
         try {
             conexion = this.obtenerConexion();
             sql = "SELECT matricula.ID_MATR, concat(usuario.1NOM_USUA,' ',usuario.1APEL_USUA) as director, "
-                    + "concat(alumno.1NOM_ALUM,' ',alumno.1APEL_ALUM) as alum, matricula.REGIS_MATR, matricula.FECH_MATR, "
+                    + "alumno.ID_ALUM, matricula.REGIS_MATR, matricula.FECH_MATR, "
                     + "matricula.ESTADO_MATR FROM matricula INNER JOIN usuario on matricula.ID_USUA = usuario.ID_USUA JOIN "
                     + "alumno on matricula.ID_ALUM = alumno.ID_ALUM ";
             puente = conexion.prepareStatement(sql);

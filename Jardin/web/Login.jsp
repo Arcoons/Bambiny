@@ -24,9 +24,10 @@
         <!-- Bootstrap -->
         <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
          <!-- <link rel="icon" type="image/x-icon" href="img/ciervo.png" />-->
-
+         <link href="Estilos/error.css" rel="stylesheet" type="text/css"/>
+         <link href="Estilos/login.css" rel="stylesheet" type="text/css"/>
+         
         <!-- Custom stlylesheet -->
-        <link href="Estilos/Logins.css" rel="stylesheet" type="text/css"/>
         
         <link rel="icon" type="image/x-icon" href="assets/jardin/IconoNegro.ico">
 
@@ -40,10 +41,7 @@
                     <div class="row">
 
                         <div class="booking-form">
-                            <div class="logo">
-                                <img src="img/logo-osc.png" alt="" id="logo">
-                            </div>
-
+                            
                             <div class="booking-bg">
 
                                 <div class="form-header">
@@ -51,16 +49,20 @@
                                     <img src="assets/jardin/IconoNegro.svg" id="icono" alt="">
                                 </div>
                             </div>
-                            <form method="post" action="Usuario">
+                            <form method="post" action="Usuario" id="loUsu">
+                                <div class="logo">
+                                <img src="img/logo-osc.png" alt="" id="logo">
+                            </div>
                                 <div id="formulario">
                                     <h1>Iniciar Sesión</h1>
 
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <div class="form-ugrop">
+                                            <div class="form-group">
                                                 <span class="form-label">Usuario</span>
 
-                                                <input class="form-control" type="text" name="textLogin" placeholder="Nombre" required>
+                                                <input class="form-control" type="text" name="textLogin" placeholder="Correo" required id="cor">
+                                                 <p id="error1" class="error1">Debe ser un correo valido</p>
                                             </div>
                                         </div>
 
@@ -71,7 +73,8 @@
                                             <div class="form-group">
                                                 <span class="form-label">Contraseña</span>
 
-                                                <input type="password" class="form-control" name="textPassword" placeholder="***" required>
+                                                <input type="password" class="form-control" name="textPassword" placeholder="***" required id="con">
+                                                <p id="error2" class="error2">Minimo 4 caracteres</p>
 
                                                 <span class="select-arrow"></span>
                                             </div>
@@ -103,6 +106,7 @@
                 </div>
             </div>
         </div>
+                            <script src="js/usu.js" type="text/javascript"> </script>
     </body>
 
 </html>

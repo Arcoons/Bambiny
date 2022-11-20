@@ -10,7 +10,6 @@ package ModeloVO;
  * @author chris
  */
 public class AcudienteVO2 {
-    
 
     public String getNUMDOCU_ACUD() {
         return NUMDOCU_ACUD;

@@ -13,14 +13,17 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="Estilos/index.css">
+
+        <link href="Estilos/form1.css" rel="stylesheet" type="text/css"/>
+
+        <!----===== Iconscout CSS ===== -->
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
         <!----======== CSS ======== -->
-        <link href="Estilos/SliderNav.css" rel="stylesheet" type="text/css"/>
-
+        <link href="Estilos/NavBar.css" rel="stylesheet" type="text/css"/>
+        <link href="Estilos/generales.css" rel="stylesheet" type="text/css"/>
         <!----===== Boxicons CSS ===== -->
         <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
-
         <link rel="icon" type="image/x-icon" href="assets/jardin/IconoNegro.ico">
         <title>JSP Page</title>
     </head>
@@ -77,14 +80,19 @@
                 <div class="bottom-content">
                     <li class="">
 
-                        <form method="post" action="Sesiones">
+                        <a>
+                            <form method="post" action="Sesiones">
 
-                            <a href="#">
-                                <i class="bx bx-log-out icon" ></i>
-                                <input class="text nav-text" type="submit" value="Cerrar Sesion" >
-                            </a>
-                        </form>
+                                <button type="submit" class="out-btn">
+                                    <i class="bx bx-log-out icon"></i>
+                                    <span class="text nav-text">Cerrar Sesion</span>
+                                </button>
+                            </form>
+                        </a>
+
+
                     </li>
+
 
 
                     <li class="mode">
@@ -106,57 +114,71 @@
 
 
         <section class="home">
-            <div class="login-box">
-                <h2>Asignar roles a Usuario</h2>
+            
+            <%
+                    if (request.getAttribute("mensajeError") != null) { %>
+                    ${mensajeError}
+
+                    <%} else {%>
+                    ${mensajeExito}        
+                    <%}%>
+            <div class="container">
+                <header>Asignar Rol</header>
                 <form method="post" action="Usuario">
+                    <div class="form first">
+                        <div class="details personal">
+                            <span class="title">Usuario</span>
 
-                    <div class="user-box">
-                        <h2><%=request.getAttribute("loginUsuario")%></h2><br>
-                    </div>
 
-                    <div class="user-box">
-                        <h2><%=request.getAttribute("estadoUsuario")%></h2><br>
-                    </div>
+                            <div class="user-box">
+                                <h2><%=request.getAttribute("loginUsuario")%></h2><br>
+                            </div>
 
-                    <h3>roles</h3>
+                            <div class="user-box">
+                                <h2><%=request.getAttribute("estadoUsuario")%></h2><br>
+                            </div>
 
-                    <select name="rol">
-                        <option>Elija el rol</option>
-                        <%
-                            RolVO rolVO = new RolVO();
-                            RolDAO rolDAO = new RolDAO();
-                            ArrayList<RolVO> listarRoles = rolDAO.listarRoles();
-                            for (int i = 0; i < listarRoles.size(); i++) {
+                            <div class="fields">
 
-                                rolVO = listarRoles.get(i);
 
-                        %>
-                        <option value="<%=rolVO.getRolId()%>"><%=rolVO.getRolTiPo()%></option>
-                        <%
-                            }
-                        %>
-                    </select>
+                                <div class="input-field">
+                                    <label>Roles</label>
+                                    <select name="rol">
+                                        <option>Elija el rol</option>
+                                        <%
+                                            RolVO rolVO = new RolVO();
+                                            RolDAO rolDAO = new RolDAO();
+                                            ArrayList<RolVO> listarRoles = rolDAO.listarRoles();
+                                            for (int i = 0; i < listarRoles.size(); i++) {
 
-                    <br>
-                    <div class="user-box">
-                        <button>asignar</button> <br>
+                                                rolVO = listarRoles.get(i);
+
+                                        %>
+                                        <option value="<%=rolVO.getRolId()%>"><%=rolVO.getRolTiPo()%></option>
+                                        <%
+                                            }
+                                        %>
+                                    </select>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+
+                        <button class="sumbit">
+                            <span class="btnText">Enviar</span>
+                            <i class="uil uil-navigator"></i>
+                        </button>
                         <input type="hidden" value="<%=request.getAttribute("idUsuario")%>" name="usuarioID">
                         <input type="hidden" value="9" name="opcion">
-                    </div>
-
+                    </div> 
                 </form>
-
-                <%
-                    if (request.getAttribute("mensajeError") != null) { %>
-                ${mensajeError}
-
-                <%} else {%>
-                ${mensajeExito}        
-                <%}%>
             </div>
 
         </section>
 
-        <script src="js/navbar.js" type="text/javascript"></script>
+
     </body>
 </html>
