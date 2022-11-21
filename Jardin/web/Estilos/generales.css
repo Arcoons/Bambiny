@@ -1,0 +1,415 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 10-sep-2022, 16:02:45
+    Author     : yoang
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:wght@300;400;500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap');
+
+
+.contenido{
+    display: flex;
+    margin: 2em;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.cards{
+    /* background: white; */
+    display: flex;
+    /* padding: 0.5em; */
+    flex-direction: column;
+    border-radius: 15px;
+}
+
+.colu{
+    /* background-color: #ffffff; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-radius: 12px;
+}
+
+.uno{
+    background-color: #fdfdfd;
+    padding: 0.5em;
+    margin: 1em;
+    width: 15em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 26px;
+}
+
+.uno img{
+    width: 5em;
+}
+
+.info{
+    /* background-color: papayawhip; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.info h4{
+    font-size: 1.2em;
+    padding: 5px 0 5px 0;
+}
+
+.info a, .info button, .info .inp{
+    background: #f5896c;
+    padding: 0.5em;
+    margin: 6px 0 5px;
+    width: 50%;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    color: #ffff;
+}
+
+.info a i{
+        font-size: 1.5em;
+}
+
+.info button{
+    border: none;
+    width: auto;
+}
+
+
+.cowe{
+    /* background: paleturquoise; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.cowe img{
+    width: 20em;
+    margin: 0 1em;
+}
+
+.infow{
+    background: white;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    /* width: 100%; */
+    padding: 2em 8em 2em 2em;
+    margin: 1em;
+    border-radius: 0em 3em 3em 0em;
+}
+
+.infow h1{
+    color: #b94322;
+    font-size: 3em;
+    margin-bottom: 0.2em;
+}
+
+.infow h4{
+    color: #18191a;
+    margin-bottom: 5px;
+}
+
+.infow hr{
+    /* border-color: #ff6f6f; */
+    width: 112%;
+    height: 3px;
+    background: #ff6f6f;
+    border: none;
+    border-radius: 7px;
+    margin-bottom: 12px;
+}
+
+.infow p{
+    color: #032c54;
+}
+
+
+
+.bn60 {
+    background-color: #8bc4d3;
+    color: #ffffff;
+    font-size: 1em;
+    /* font-weight: 600; */
+    position: relative;
+    outline: none;
+    border-radius: 0.6em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 2.5em;
+    border: none;
+    padding: 10px;
+}
+
+.bn61{
+    background-color: #ff6f6f;
+    color: #ffffff;
+    font-size: 1em;
+    /* font-weight: 600; */
+    position: relative;
+    outline: none;
+    border-radius: 0.6em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 2.5em;
+    border: none;
+    padding: 10px;
+}
+
+.bn62{
+    background-color: #7ddb8b;
+    color: #ffffff;
+    font-size: 1em;
+    /* font-weight: 600; */
+    position: relative;
+    outline: none;
+    border-radius: 0.6em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 2.5em;
+    border: none;
+    padding: 10px;
+}
+
+.pag{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    margin-top: 10px;
+}
+
+.pag a, .pag p{
+    text-decoration: none;
+    padding-right: 5px;
+}
+
+.cs{
+    background-color: #f5896c;
+    border: none;
+    padding: 1em;
+    border-radius: 1.5em;
+    cursor: pointer;
+}
+
+.arriba{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.container{
+    position: relative;
+    max-width: 900px;
+    width: 100%;
+    border-radius: 6px;
+    padding: 30px;
+    margin: 2em;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgb(0 0 0 / 10%);
+    height: fit-content;
+   
+}
+
+.container header{
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+.container header::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 3px;
+    width: 27px;
+    border-radius: 8px;
+    background-color: #bd7965;
+}
+
+.head{
+    background: white;
+    height: 5em;
+    width: 90%;
+    margin: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2em;
+
+}
+
+.hdrol{
+    font-family: 'Nunito', sans-serif;
+}
+
+.btn-est2{
+    border: 2px solid palevioletred;
+    border-radius: 8px;
+    background: plum;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.btn-est3{
+    text-decoration: none;
+    color: #ffffff;
+    border-radius: 8px;
+    background: plum;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.custom-btn {
+    width: 130px;
+    height: 40px;
+    padding: 10px 25px;
+    border-radius: 7px ; 
+    border: 2px solid palevioletred;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    margin-top: 2em;
+    margin-left: 3em;
+    color: purple;
+}
+
+/* 1 */
+.btn-1 {
+    transition: all 0.3s ease;
+}
+.btn-1:hover {
+    box-shadow:
+        -7px -7px 20px 0px #fff9,
+        -4px -4px 5px 0px #fff9,
+        7px 7px 20px 0px #0002,
+        4px 4px 5px 0px #0001;
+}
+
+/*MODAL*/
+
+.modal {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow: auto;
+    padding-top: 200px;
+    display: none;
+}
+
+.contenidoModal {
+    background-color: #FFFFFF;
+    width: 60%;
+    margin: auto;
+    position: relative;
+    padding: 1rem;
+    animation-name: animarmodal;
+    animation-duration: 0.5s;
+}
+
+@keyframes animarmodal {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+.cerrarModal {
+    font-size: 2rem;
+    float: right;
+}
+
+.cerrarModal:hover {
+    cursor: pointer;
+}
+
+.contenidoModal h2 {
+    background-color: blueviolet;
+    color: #FFFFFF;
+    padding: 1rem 0;
+    text-align: center;
+    clear: both;
+}
+
+.modal2 {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow: auto;
+    padding-top: 200px;
+    display: none;
+}
+
+.contenidoModal2 {
+    background-color: #FFFFFF;
+    width: 60%;
+    margin: auto;
+    position: relative;
+    padding: 1rem;
+    animation-name: animarmodal2;
+    animation-duration: 0.5s;
+}
+
+@keyframes animarmodal2 {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+.cerrarModal2 {
+    font-size: 2rem;
+    float: right;
+}
+
+.cerrarModal2:hover {
+    cursor: pointer;
+}
+
+.contenidoModal2 h2 {
+    background-color: blueviolet;
+    color: #FFFFFF;
+    padding: 1rem 0;
+    text-align: center;
+    clear: both;
+}
