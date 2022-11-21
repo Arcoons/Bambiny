@@ -39,108 +39,67 @@ public class DocumentControlador extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-        throws ServletException, IOException {
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        
-        
-        
-        String id_docu  = request.getParameter("textid_docu");
-         String id_alum  = request.getParameter("textid_alum");
-         String tipo_docu  = request.getParameter("texttipo_docu");
-         String  fechcreac_docu = request.getParameter("textfechcreac_docu");
-         String  archivo_docu = request.getParameter("textarchivo_docu");
-         String  ruta = request.getParameter("textarchivo_docu");
-     
-        
-         
+        String id_docu = request.getParameter("textid_docu");
+        String id_alum = request.getParameter("textid_alum");
+        String tipo_docu = request.getParameter("texttipo_docu");
+        String fechcreac_docu = request.getParameter("textfechcreac_docu");
+        String archivo_docu = request.getParameter("textarchivo_docu");
+        String ruta = request.getParameter("textarchivo_docu");
+
         int opcion = Integer.parseInt(request.getParameter("opcion"));
 
         //2. el VO tiene los datos seguros
-        docuVO doVO = new docuVO(id_docu, id_alum, tipo_docu, fechcreac_docu, archivo_docu, ruta);
+        docuVO doVO = new docuVO(id_docu, id_alum, tipo_docu, fechcreac_docu, archivo_docu);
 
 //3. ¿Quién hace las operaciones? DAO
         docuDAO doDAO = new docuDAO(doVO);
-        
-        
-        
-          
-        
-       //4. dministrar Operaciones
-          switch (opcion) {
+
+        //4. dministrar Operaciones
+        switch (opcion) {
 
             case 1:
-                ArrayList<String>lista=new ArrayList<>();
-                try{
-                    FileItemFactory file= new DiskFileItemFactory();
-                    ServletFileUpload fileUpload=new ServletFileUpload(file);
-                    List items=fileUpload.parseRequest(request);
-                    for (int i=0; i<items.size(); i++){
-                    FileItem fileItem=(FileItem)items.get(i);
-                     if(!fileItem.isFormField()){
-                         File f=new File("C:\\Users\\chris\\OneDrive\\Imágenes\\Documentos\\GitHub\\Bambiny\\Jardin\\web\\Imagen"+fileItem.getName());
-                         fileItem.write(f);
-                         doVO.setRuta(f.getAbsolutePath());
-                         
-                     }else{
-                         lista.add(fileItem.getString());
-                         
-                     }
-                    }
-                    doVO.setArchivo_docu(lista.get(0));
-                   doDAO.agregarRegistro();
-                    
-                }catch(Exception e){
-                    if (doDAO.agregarRegistro()) {
+                if (doDAO.agregarRegistro()) {
                     request.setAttribute("MensajeExito", "Documento cargado correctamente");
-                         }else {
+                } else {
                     request.setAttribute("MensajeError", "El documento no se cargo correctamente");
-                    }
-                } 
+                }
                 request.getRequestDispatcher("documento.jsp").forward(request, response);
                 break;
-                
-                               
-                
+
             case 2:
                 if (doDAO.actualizarRegistro()) {
                     request.setAttribute("mensajeExito", "se actualizo correctamente");
                     request.getRequestDispatcher("listarDocumentos.jsp").forward(request, response);
-                    
+
                 } else {
                     request.setAttribute("mensajeError", "NO se actualizo correctamente");
-                    
+
                 }
                 request.getRequestDispatcher("actuDocu.jsp").forward(request, response);
                 break;
-                
-                
+
             case 3:
-                doVO =doDAO.consultarDocu(id_docu);
-                 
+                doVO = doDAO.consultarDocu(id_docu);
+
                 if (doVO != null) {
-                    
+
                     request.setAttribute("datosConsultados", doVO);
                     request.getRequestDispatcher("actuDocu.jsp").forward(request, response);
                     request.setAttribute("mensajeError", "no se pudo encontrar");
-                    
-                }else{
+
+                } else {
                     request.setAttribute("mensajeError", "no se pudo encontrar");
                     request.getRequestDispatcher("listarDocumentos.jsp").forward(request, response);
 
                 }
                 break;
-                
-            
-           
-          }
-        
-        
-        
-        
-        
-    }
 
+        }
+
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -165,7 +124,7 @@ public class DocumentControlador extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-   @Override
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
@@ -182,4 +141,3 @@ public class DocumentControlador extends HttpServlet {
     }// </editor-fold>
 
 }
-

@@ -127,7 +127,7 @@ public class docuDAO extends ConexionBd implements Crud {
 
             while (mensajero.next()) {
                 doVO = new docuVO(mensajero.getString(1), mensajero.getString(2), mensajero.getString(3),
-                        mensajero.getString(4),mensajero.getString(5),mensajero.getString(6));
+                        mensajero.getString(4),mensajero.getString(5));
             }
 
         } catch (SQLException e) {
@@ -154,7 +154,7 @@ public class docuDAO extends ConexionBd implements Crud {
             while (mensajero.next()) {
 
               docuVO  doVO = new docuVO(mensajero.getString(1), mensajero.getString(2), mensajero.getString(3), 
-                           mensajero.getString(4), mensajero.getString(5),mensajero.getString(6));
+                           mensajero.getString(4), mensajero.getString(5));
               listadoc.add(doVO);
               
             }
