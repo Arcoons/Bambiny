@@ -78,11 +78,12 @@ public class UsuarioControlador extends HttpServlet {
         switch (opcion) {
             case 1: //Agregar Registro
                 if (usuDAO.agregarRegistro()) {
-                    request.setAttribute("mensajeExito", "el usuario se registro correctamente");
+                   
                     String receptor = request.getParameter("textLogin");
                     String asunto = "Correo de Registro";
                     String contenido = "Bienvenido, su registro se realizo con exito su usuario es " + receptor + "y su cntraseña es " + usuPassword
                             + " se recomienda cambiar la contraseña por motivos de seguridad";
+                     request.setAttribute("mensajeExito", "el usuario se registro correctamente");
 
                     try {
 
