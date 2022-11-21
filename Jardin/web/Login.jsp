@@ -23,12 +23,12 @@
 
         <!-- Bootstrap -->
         <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
-         <!-- <link rel="icon" type="image/x-icon" href="img/ciervo.png" />-->
-         <link href="Estilos/error.css" rel="stylesheet" type="text/css"/>
-         <link href="Estilos/login.css" rel="stylesheet" type="text/css"/>
-         
+        <!-- <link rel="icon" type="image/x-icon" href="img/ciervo.png" />-->
+        <link href="Estilos/error.css" rel="stylesheet" type="text/css"/>
+        <link href="Estilos/login.css" rel="stylesheet" type="text/css"/>
+
         <!-- Custom stlylesheet -->
-        
+
         <link rel="icon" type="image/x-icon" href="assets/jardin/IconoNegro.ico">
 
 
@@ -41,7 +41,7 @@
                     <div class="row">
 
                         <div class="booking-form">
-                            
+
                             <div class="booking-bg">
 
                                 <div class="form-header">
@@ -51,8 +51,8 @@
                             </div>
                             <form method="post" action="Usuario" id="loUsu">
                                 <div class="logo">
-                                <img src="img/logo-osc.png" alt="" id="logo">
-                            </div>
+                                    <img src="img/logo-osc.png" alt="" id="logo">
+                                </div>
                                 <div id="formulario">
                                     <h1>Iniciar Sesión</h1>
 
@@ -62,7 +62,7 @@
                                                 <span class="form-label">Usuario</span>
 
                                                 <input class="form-control" type="text" name="textLogin" placeholder="Correo" required id="cor">
-                                                 <p id="error1" class="error1">Debe ser un correo valido</p>
+                                                <p id="error1" class="error1">Debe ser un correo valido</p>
                                             </div>
                                         </div>
 
@@ -81,17 +81,19 @@
                                         </div>
                                     </div>
 
-                                
+
                                 </div>
 
                                 <div class="form-btn">
+                                    <p id="uError" class="uError" >Debe completar el formulario</p>
+                                    <p id="exito" class="exito" >Formulario enviado</p>
                                     <button class="submit-btn">Ingresar</button>
                                     <input type="hidden" value="4" name="opcion"><br>
                                 </div>
 
                                 <br>
                                 <%
-                                if (request.getAttribute("mensajeError") != null) {%>
+                                    if (request.getAttribute("mensajeError") != null) {%>
 
                                 ${mensajeError}
                                 <%} else {%>
@@ -102,14 +104,14 @@
                             <form>
                                 <button id="btnpass" class="btn submits" ><a href="recu.jsp">Olvido su contraseña</a></button>
                             </form>
-                             
+
 
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-                            <script src="js/usu.js" type="text/javascript"> </script>
+        <script src="js/usu.js" type="text/javascript"></script>
     </body>
 
 </html>

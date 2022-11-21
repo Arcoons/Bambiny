@@ -15,7 +15,15 @@ public class docuVO {
     }
     
     
-    private String id_docu, id_alum, tipo_docu, fechcreac_docu, archivo_docu;
+    private String id_docu, id_alum, tipo_docu, fechcreac_docu, archivo_docu, ruta;
+
+    public String getRuta() {
+        return ruta;
+    }
+
+    public void setRuta(String ruta) {
+        this.ruta = ruta;
+    }
 
     public String getId_docu() {
         return id_docu;
@@ -57,12 +65,13 @@ public class docuVO {
         this.archivo_docu = archivo_docu;
     }
 
-    public docuVO(String id_docu, String id_alum, String tipo_docu, String fechcreac_docu, String archivo_docu) {
+    public docuVO(String id_docu, String id_alum, String tipo_docu, String fechcreac_docu, String archivo_docu, String ruta) {
         this.id_docu = id_docu;
         this.id_alum = id_alum;
         this.tipo_docu = tipo_docu;
         this.fechcreac_docu = fechcreac_docu;
         this.archivo_docu = archivo_docu;
+        this.ruta = ruta;
     }
 
    

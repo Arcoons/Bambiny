@@ -11,7 +11,7 @@
 <html>
     <head>
         <!----======== CSS ======== -->
-        <link href="Estilos/form1.css" rel="stylesheet" type="text/css"/>
+        <link href="Estilos/form2.css" rel="stylesheet" type="text/css"/>
         <link href="Estilos/error.css" rel="stylesheet" type="text/css"/>
         <link href="Estilos/generales.css" rel="stylesheet" type="text/css"/>
         <!----===== Iconscout CSS ===== -->
@@ -55,6 +55,8 @@
                 </div>
 
                 <div class="container">
+                    <p id="exito" class="exito" >Formulario enviado</p>
+                            <p id="uError" class="uError" >Debe completar el formulario</p>
                     <%                        if (request.getAttribute("mensajeError") != null) {%>
 
                     ${mensajeError}
@@ -90,7 +92,7 @@
                                     <div class="input-field">
                                         <label>Segundo Nombre</label>
                                         <input type="text" name="textNom_acud2" placeholder="Escribe tu nombre" id="nom2"></i>
-                                        <p id="error2" class="error4">El campo solo acepta letras, minimo 3 letras</p>
+                                        <p id="error4" class="error4">El campo solo acepta letras, minimo 3 letras</p>
                                     </div>
 
                                     <div class="input-field">
@@ -129,7 +131,7 @@
 
                                 </div>
                             </div>
-                            <p id="uError" class="uError" >Debe completar el formulario</p>
+                            
                             <input type="hidden" name="textId_alum" value="<%= id_alumn%>">
                             <button class="sumbit">
                                 <span class="btnText">Enviar</span>

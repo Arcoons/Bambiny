@@ -96,7 +96,7 @@
                                 <div class="input-field">
                                     <label>Fecha de nacimiento</label>
                                     <input type="date" name="textfechnaci_alum" placeholder="Tu fecha de nacimiento"id='na' >
-                                    <p id="error3" class="error3">Debe ser una fecha valida, mayor de edad</p>
+                                    <p id="error3" class="error3">Debe ser una fecha valida, mayor de 1 año</p>
                                 </div>
 
                                 <div class="input-field">
@@ -161,7 +161,7 @@
                                 <div class="input-field">
                                     <label>Grupo Sanguineo</label>
                                     <input type="text" name="textgrupsangui_alum" placeholder="Grupo Sanguineo" id='san'>
-                                    <p id="error8" class="error8">El campo solo admite numeros, minimo 3 y maximo 11</p>
+                                    <p id="error8" class="error8">El campo solo admite minimo 3 caracteres</p>
                                 </div>
 
 
@@ -215,7 +215,7 @@
                                 <div class="input-field">
                                     <label>Peso al nacer</label>
                                     <input type="text" name="textpeso_alum" placeholder="50 Gramos" id='peso' >
-                                    <p id="error13" class="error13">El campo solo admite numeros, minimo 3 y maximo 11</p>
+                                    <p id="error13" class="error13">El campo solo admite numeros, minimo 2</p>
                                 </div>
 
                                 <div class="input-field">

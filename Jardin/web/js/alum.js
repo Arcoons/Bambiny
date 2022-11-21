@@ -19,7 +19,9 @@ const imputs = document.querySelectorAll('#regiAlum input');
 //Objetos con expresion regulares para validaciòn
 const vali = {
     nombre: /^[A-Za-z\s]{2,40}$/,
-    numeros: /^[0-9]{3,11}$/
+    numeros: /^[0-9]{2,11}$/,
+    sangui: /^.{2,3}$/,
+    herma: /^[0-9]{1,2}$/
 
 
 };
@@ -85,7 +87,7 @@ const acudi = (e) => {
             parseInt(edad);
 
             console.log(edad);
-            if (ano > 1930 && edad > 1 && edad < 100) {
+            if (ano > 1930 && edad >= 1 && edad < 100) {
                 document.getElementById('error3').classList.remove('error');
                 document.getElementById('error3').classList.add('correct');
                 document.getElementById('error3').classList.remove('incorrect');
@@ -142,7 +144,7 @@ const acudi = (e) => {
             break;
     
         case "textnumherma_alum":
-            if (vali.numeros.test(e.target.value)) {
+            if (vali.herma.test(e.target.value)) {
                 document.getElementById('error7').classList.remove('error');
                 document.getElementById('her').classList.add('correct');
                 document.getElementById('her').classList.remove('incorrect');
@@ -156,7 +158,7 @@ const acudi = (e) => {
             }
             break;
             case "textgrupsangui_alum":
-            if (vali.numeros.test(e.target.value)) {
+            if (vali.sangui.test(e.target.value)) {
                 document.getElementById('error8').classList.remove('error');
                 document.getElementById('san').classList.add('correct');
                 document.getElementById('san').classList.remove('incorrect');

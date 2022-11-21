@@ -81,7 +81,7 @@ public class UsuarioControlador extends HttpServlet {
                     request.setAttribute("mensajeExito", "el usuario se registro correctamente");
                     String receptor = request.getParameter("textLogin");
                     String asunto = "Correo de Registro";
-                    String contenido = "Bienvenido, su registro se realizo con exito su usuario es " + receptor + "y su cntraseña es " + usuPassword 
+                    String contenido = "Bienvenido, su registro se realizo con exito su usuario es " + receptor + "y su cntraseña es " + usuPassword
                             + " se recomienda cambiar la contraseña por motivos de seguridad";
 
                     try {
@@ -146,9 +146,7 @@ public class UsuarioControlador extends HttpServlet {
 
                     if (listaRol.size() > 1) {
                         request.getRequestDispatcher("Menu.jsp").forward(request, response);
-                    }
-
-                    else if (roltipo.equals("admin")) {
+                    } else if (roltipo.equals("admin")) {
                         request.getRequestDispatcher("admin.jsp").forward(request, response);
                     } else if (roltipo.equals("director")) {
                         request.getRequestDispatcher("director.jsp").forward(request, response);
@@ -158,7 +156,7 @@ public class UsuarioControlador extends HttpServlet {
                         request.getRequestDispatcher("alumno.jsp").forward(request, response);
                         AlumnoVO alumVO = new AlumnoVO();
                         AlumnoDAO alumDAO = new AlumnoDAO(alumVO);
-                        
+
                         alumDAO.consultarAlumno(usuid);
                     }
                 } else {
@@ -176,10 +174,10 @@ public class UsuarioControlador extends HttpServlet {
                     request.setAttribute("mensajeError", "Error Intenta de nuevo");
                 }
                 request.getRequestDispatcher("admin.jsp").forward(request, response);
-                
+
                 break;
-                
-                case 7:
+
+            case 7:
                 String estadoActivo = "Activo";
                 String usuaId = request.getParameter("estadoInhabilitado");
                 if (usuDAO.inactivarEstado(estadoActivo, usuaId)) {
@@ -189,38 +187,65 @@ public class UsuarioControlador extends HttpServlet {
                     request.setAttribute("mensajeError", "Error Intenta de nuevo");
                 }
                 request.getRequestDispatcher("admin.jsp").forward(request, response);
-                
+
                 break;
-                
-                case 8:
-                    String idUsuario = request.getParameter("idUsuario");
-                    String loginUsuario = request.getParameter("loginUsuario");
-                    String estadoUsuario = request.getParameter("estadoUsuario");
-                    request.setAttribute("idUsuario", idUsuario);
-                    request.setAttribute("loginUsuario", loginUsuario);
-                    request.setAttribute("estadoUsuario", estadoUsuario);
-                    
-                    request.getRequestDispatcher("roles.jsp").forward(request, response);
-                    break;
-                    
-                case 9:
-                    RolVO rolVO = new RolVO();
-                    RolDAO rolDAO = new RolDAO(rolVO);
-                    String usuarioID = request.getParameter("usuarioID");
-                    String rol = request.getParameter("rol");
-                    
-                    if (rolDAO.agregarRegistro(rol, usuarioID)) {
-                        if (rol.equals("2")) {
-                            AlumnoVO alumVO = new AlumnoVO();
-                            AlumnoDAO alumDAO = new AlumnoDAO(alumVO);
-                            alumDAO.agregarAlumno(usuarioID);
-                        }
+
+            case 8:
+                String idUsuario = request.getParameter("idUsuario");
+                String loginUsuario = request.getParameter("loginUsuario");
+                String estadoUsuario = request.getParameter("estadoUsuario");
+                request.setAttribute("idUsuario", idUsuario);
+                request.setAttribute("loginUsuario", loginUsuario);
+                request.setAttribute("estadoUsuario", estadoUsuario);
+
+                request.getRequestDispatcher("roles.jsp").forward(request, response);
+                break;
+
+            case 9:
+                RolVO rolVO = new RolVO();
+                RolDAO rolDAO = new RolDAO(rolVO);
+                String usuarioID = request.getParameter("usuarioID");
+                String rol = request.getParameter("rol");
+
+                if (rolDAO.agregarRegistro(rol, usuarioID)) {
+                    if (rol.equals("2")) {
+                        AlumnoVO alumVO = new AlumnoVO();
+                        AlumnoDAO alumDAO = new AlumnoDAO(alumVO);
+                        alumDAO.agregarAlumno(usuarioID);
+                    }
                     request.setAttribute("mensajeExito", "se le asigno el rol correoctamente al usuario");
                 } else {
                     request.setAttribute("mensajeError", "hubo un problema por favor intentelo de nuevo");
                 }
-                    request.getRequestDispatcher("roles.jsp").forward(request, response);
-                    break;
+                request.getRequestDispatcher("roles.jsp").forward(request, response);
+                break;
+                
+            case 10://cambiarcontraseña contraseña
+                if (usuDAO.actualizarContrasena()) {
+
+                    request.setAttribute("mensajeExito", "Contraseña actualizada");
+                    request.getRequestDispatcher("Login.jsp").forward(request, response);
+                } else {
+                    request.setAttribute("mensajeError", "No se actualizo la contraseña");
+                }
+                request.getRequestDispatcher("recu.jsp").forward(request, response);
+                break;
+                
+            case 11:
+                usuVO = usuDAO.consultarCorreo(usuLogin);
+
+                if (usuVO != null) {
+
+                    request.setAttribute("datosConsultados", usuVO);
+                    request.getRequestDispatcher("actuCo.jsp").forward(request, response);
+
+                } else {
+                    request.setAttribute("mensajeError", "lo sentimos revisa los campos nuevamente");
+                    request.getRequestDispatcher("recu.jsp").forward(request, response);
+
+                }
+                break;
+
         }
     }
 
@@ -251,8 +276,7 @@ public class UsuarioControlador extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        
-        
+
     }
 
     /**

@@ -35,11 +35,10 @@ p{
     display:none;
 }
 .Perror{
-    display:flex;   
+       
     background-color: rgba(255, 0, 0, 0.589);
     height: 3em;
     color:white;
-    display:flex;
     justify-content:center;
     align-items: center;
 }
@@ -51,7 +50,6 @@ p{
     background-color: rgba(0, 238, 99, 0.712);
     height: 3em;
     color:white;
-    display:flex;
     justify-content:center;
     align-items: center;
 }

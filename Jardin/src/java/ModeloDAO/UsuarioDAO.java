@@ -149,8 +149,38 @@ public class UsuarioDAO extends ConexionBd implements Crud {
         }
 
         return operacion;
-
     }
+    
+        public UsuarioVO consultarCorreo(String usuLogin ) {
+
+        UsuarioVO usuVO = null;
+
+        try {
+
+            conexion = this.obtenerConexion();
+            sql = "SELECT * FROM usuario WHERE CORREO_USUA=? ";
+            puente = conexion.prepareStatement(sql);
+            puente.setString(1, usuLogin);
+            mensajero = puente.executeQuery();
+
+            while (mensajero.next()) {
+                usuVO = new UsuarioVO(mensajero.getString(1), mensajero.getString(2), mensajero.getString(3), mensajero.getString(4), mensajero.getString(5), mensajero.getString(6), mensajero.getString(7),
+                mensajero.getString(8), mensajero.getString(9), mensajero.getString(10), mensajero.getString(11), mensajero.getString(12), mensajero.getString(13), mensajero.getString(14));
+            }
+
+        } catch (SQLException e) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, e);
+        } finally {
+            try {
+                this.deneterConexion();
+            } catch (SQLException e) {
+                Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, e);
+            }
+        }
+
+        return usuVO;
+    }
+
     public boolean inactivarEstado(String estadoInhabilitado, String idUsu) {
         try {
             sql = "update usuario set ESTA_USUA=? where ID_USUA =?";
@@ -222,6 +252,30 @@ public class UsuarioDAO extends ConexionBd implements Crud {
             }
         }
         return operacion;
+    }
+    public boolean actualizarContrasena() {
+        try {
+            sql = "UPDATE usuario set CONTRASENA=? WHERE usuario.CORREO_USUA=?";
+            puente = conexion.prepareStatement(sql);
+            
+            puente.setString(1, usuPassword);
+            puente.setString(2, usuLogin);
+            puente.executeUpdate();
+            operacion = true;
+            
+
+        } catch (SQLException e) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, e);
+        } finally {
+            try {
+                this.deneterConexion();
+            } catch (SQLException ex) {
+                Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+        return operacion;
+
     }
     
     public ArrayList<UsuarioVO> listar() {

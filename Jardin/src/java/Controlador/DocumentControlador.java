@@ -41,7 +41,7 @@ public class DocumentControlador extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        Imagen p=new Imagen();
+
         
         
         
@@ -50,13 +50,14 @@ public class DocumentControlador extends HttpServlet {
          String tipo_docu  = request.getParameter("texttipo_docu");
          String  fechcreac_docu = request.getParameter("textfechcreac_docu");
          String  archivo_docu = request.getParameter("textarchivo_docu");
+         String  ruta = request.getParameter("textarchivo_docu");
      
         
          
         int opcion = Integer.parseInt(request.getParameter("opcion"));
 
         //2. el VO tiene los datos seguros
-        docuVO doVO = new docuVO(id_docu,id_alum, tipo_docu, fechcreac_docu, archivo_docu);
+        docuVO doVO = new docuVO(id_docu, id_alum, tipo_docu, fechcreac_docu, archivo_docu, ruta);
 
 //3. ¿Quién hace las operaciones? DAO
         docuDAO doDAO = new docuDAO(doVO);
@@ -79,21 +80,22 @@ public class DocumentControlador extends HttpServlet {
                      if(!fileItem.isFormField()){
                          File f=new File("C:\\Users\\chris\\OneDrive\\Imágenes\\Documentos\\GitHub\\Bambiny\\Jardin\\web\\Imagen"+fileItem.getName());
                          fileItem.write(f);
-                         p.setRuta(f.getAbsolutePath());
-                         if (doDAO.agregarRegistro()) {
-                    request.setAttribute("MensajeExito", "Documento cargado correctamente");
-                         }else {
-                    request.setAttribute("MensajeError", "El documento no se cargo correctamente");
-                    }
+                         doVO.setRuta(f.getAbsolutePath());
+                         
                      }else{
                          lista.add(fileItem.getString());
                          
                      }
                     }
-                    p.setNombre(lista.get(0));
-                    doDAO.agregarRegistro(p);
+                    doVO.setArchivo_docu(lista.get(0));
+                   doDAO.agregarRegistro();
                     
                 }catch(Exception e){
+                    if (doDAO.agregarRegistro()) {
+                    request.setAttribute("MensajeExito", "Documento cargado correctamente");
+                         }else {
+                    request.setAttribute("MensajeError", "El documento no se cargo correctamente");
+                    }
                 } 
                 request.getRequestDispatcher("documento.jsp").forward(request, response);
                 break;

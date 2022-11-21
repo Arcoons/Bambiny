@@ -4,7 +4,6 @@
     Author     : yoang
 --%>
 
-<%@page import="ModeloDAO.UsuarioDAO"%>
 <%@page import="ModeloVO.UsuarioVO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -56,31 +55,31 @@
                                     <img src="img/logo-osc.png" alt="" id="logo">
                                 </div>
                                 <div id="formulario">
-                                    <h1>Recuperar Contraseña</h1>
+                                    <h1>Actualizar contraseña</h1>
+                                    <%            UsuarioVO usuVO = (UsuarioVO) request.getAttribute("datosConsultados");
+                                        if (usuVO != null) {
+                                    %>
 
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <span class="form-label">Correo</span>
+                                                <span class="form-label">Nueva contraseña</span>
 
-                                                <input class="form-control" type="text" name="textLogin" placeholder="Correo" required id="cor">
-                                                <p id="error1" class="error1">Debe ser un correo valido</p>
+                                                <input class="form-control" type="password" name="textPassword" placeholder="*****" required id="cor">
+                                                <p id="error2" class="error2">Minimo 4 caracteres</p>
                                             </div>
                                         </div>
 
                                     </div>
-                                    <div class="row">
-                                        <h2>Escriba su correo para recuperar su contraseña</h2>
-                                    </div>
-
-
+                                    
 
                                 </div>
                                 <p id="uError" class="uError" >Debe completar el formulario</p>
                                 <p id="exito" class="exito" >Formulario enviado</p>
                                 <div class="form-btn">
-                                    <button class="submit-btn">Recuperar Contraseña</button>
-                                    <input type="hidden" value="11" name="opcion"><br>
+                                    <button class="submit-btn" name="textLogin" value="<%= usuVO.getCorreo_usua() %>">Cambiar contraseña</button>
+                                    <input type="hidden" value="10" name="opcion"><br>
+                                    
                                 </div>
 
                                 <br>
@@ -94,6 +93,8 @@
                                 %>
                             </form>
 
+                            <%}
+                            %>
 
                         </div>
                     </div>

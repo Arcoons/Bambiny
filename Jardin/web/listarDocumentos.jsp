@@ -74,6 +74,7 @@
                                     <th>alumno</th>
                                     <th>documento</th>
                                     <th>fecha</th>
+                                    <th>ruta</th>
                                     <th>archivo</th>
                                     <th>opciones</th>
                                 </tr>
@@ -93,8 +94,9 @@
                                 <td><%= doVO.getId_alum()%></td>
                                 <td><%= doVO.getTipo_docu()%></td>
                                 <td><%= doVO.getFechcreac_docu()%></td>
+                                <td><%= doVO.getRuta()%></td>
                                 <td><%= doVO.getArchivo_docu()%></td>
-
+                                
                                 <td>
                                     <form method="post" action="Document">
 

@@ -19,7 +19,6 @@ const imputs = document.querySelectorAll('#regiAcu input');
 //Objetos con expresion regulares para validaciòn
 const vali = {
     nombre: /^[A-Za-z\s]{3,40}$/,
-    apellido: /^[A-Za-z\s]{3,40}$/,
     numeros: /^[0-9]{3,11}$/
 
 
@@ -155,6 +154,9 @@ const acudi = (e) => {
                 
                 console.log('click');
         });
+        formu.addEventListener('.sumbit',(e)=>{
+
+        e.preventDefault();
         if(campos.nom && campos.apel && campos.na && campos.nom2 && campos.apel2 && campos.cedu && campos.cel){
             
             document.getElementById('exito').classList.add('succes');
@@ -165,4 +167,5 @@ const acudi = (e) => {
             document.getElementById('exito').classList.remove('succes');
         }
     });
+        
         
