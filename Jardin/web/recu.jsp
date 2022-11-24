@@ -56,7 +56,10 @@
                                     <img src="img/logo-osc.png" alt="" id="logo">
                                 </div>
                                 <div id="formulario">
-                                    <h1>Recuperar Contraseña</h1>
+                                    <center>
+                                     <h1>Recuperar Contraseña</h1>   
+                                    </center>
+                                    
 
                                     <div class="row">
                                         <div class="col-md-12">
@@ -69,9 +72,11 @@
                                         </div>
 
                                     </div>
+                                    <center>
                                     <div class="row">
                                         <h2>Escriba su correo para recuperar su contraseña</h2>
                                     </div>
+                                    </center>
 
 
 
@@ -81,6 +86,13 @@
                                 <div class="form-btn">
                                     <button class="submit-btn">Recuperar Contraseña</button>
                                     <input type="hidden" value="11" name="opcion"><br>
+                                </div>
+                                
+                                <br>
+                                
+                                <div class="form-btn">
+                                    <button class="submit-btn"><a href="Login.jsp">Volver</a></button>
+                                   
                                 </div>
 
                                 <br>

@@ -83,7 +83,7 @@ public class UsuarioControlador extends HttpServlet {
                     String asunto = "Correo de Registro";
                     String contenido = "Bienvenido, su registro se realizo con exito su usuario es " + receptor + "y su cntraseña es " + usuPassword
                             + " se recomienda cambiar la contraseña por motivos de seguridad";
-                     request.setAttribute("mensajeExito", "el usuario se registro correctamente");
+                     request.setAttribute("mensajeExito", "el usuario se registro corr  ctamente");
 
                     try {
 

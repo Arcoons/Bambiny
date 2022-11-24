@@ -100,10 +100,16 @@
                                 ${mensajeExito}
                                 <%}
                                 %>
+                                
+                                <center>
+
+                                <form>
+                                    <button id="btnpass" class="submit-btn" ><a href="recu.jsp">Olvido su contraseña</a></button>
+                                </form>
+                                </center>
                             </form>
-                            <form>
-                                <button id="btnpass" class="btn submits" ><a href="recu.jsp">Olvido su contraseña</a></button>
-                            </form>
+
+
 
 
                         </div>

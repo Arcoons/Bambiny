@@ -18,7 +18,15 @@ and open the template in the editor.
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+
+}
+
+.msgSucces{
+    color: #00b738;
+}
+
+.msgError{
+    color: #b70000;
 }
 
 .cards{
@@ -77,8 +85,14 @@ and open the template in the editor.
     color: #ffff;
 }
 
+.info .inp{
+    border: none;
+    padding: 0.5em;
+    width: 100%;
+}
+
 .info a i{
-        font-size: 1.5em;
+    font-size: 1.5em;
 }
 
 .info button{
@@ -227,7 +241,7 @@ and open the template in the editor.
     background-color: #fff;
     box-shadow: 0 5px 10px rgb(0 0 0 / 10%);
     height: fit-content;
-   
+
 }
 
 .container header{

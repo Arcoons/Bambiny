@@ -53,17 +53,17 @@
                     </div>
 
                 </div>
+                <%                        if (request.getAttribute("mensajeError") != null) {%>
 
+                ${mensajeError}
+                <%} else {%>
+                ${mensajeExito}
+                <%}
+                %>
                 <div class="container">
                     <p id="exito" class="exito" >Formulario enviado</p>
                             <p id="uError" class="uError" >Debe completar el formulario</p>
-                    <%                        if (request.getAttribute("mensajeError") != null) {%>
-
-                    ${mensajeError}
-                    <%} else {%>
-                    ${mensajeExito}
-                    <%}
-                    %>
+                    
                     <header>Registration</header>
                     <form method="post" action="Acudientes" id="regiAcu">
                         <div class="form first">

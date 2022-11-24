@@ -83,6 +83,10 @@
                                 </div>
 
                                 <br>
+                                <div class="form-btn">
+                                    <button class="submit-btn"><a href="Login.jsp">Volver</a></button>
+                                   
+                                </div>
                                 <%
                                     if (request.getAttribute("mensajeError") != null) {%>
 

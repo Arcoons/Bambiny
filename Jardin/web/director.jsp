@@ -96,7 +96,7 @@
                                         <option value="Director">Director</option>
                                         <option value="Profesor">Profesor</option>
                                     </select>
-                                    <input type="submit" value="Alumnos Registrados">
+                                    <input class="inp" type="submit" value="Alumnos Registrados">
                                 </form>
 
                             </div>

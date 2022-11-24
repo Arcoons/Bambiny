@@ -140,16 +140,15 @@
                     </div>
 
                 </div>
+                <%                if (request.getAttribute("mensajeError") != null) { %>
 
+                <h5 class="msgError" >${mensajeError}</h5>  
+
+                <%} else {%>
+                <h5 class="msgSucces" >${mensajeExito}</h5> 
 
                 <div class="container cont">
-                    <%
-                        if (request.getAttribute("mensajeError") != null) { %>
-                    ${mensajeError}
-
-                    <%} else {%>
-                    ${mensajeExito}        
-                    <%}%>
+                  
                     <div>
                         <header>Asignar Rol</header>
                         <form method="post" action="Usuario">

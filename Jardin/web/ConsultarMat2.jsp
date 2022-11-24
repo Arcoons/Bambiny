@@ -50,16 +50,18 @@
                     </div>
 
                 </div>
-                <div class="container ">    
-                    <h1>Matriculas por registradas</h1>
-
-                    <br>
-                    <% if (request.getAttribute("mensajeError") != null) { %>
+                
+                 <% if (request.getAttribute("mensajeError") != null) { %>
                     ${mensajeError}
 
                     <%} else {%>
                     ${mensajeExito}        
                     <%}%>
+                <div class="container ">    
+                    <h1>Matriculas por registradas</h1>
+
+                    <br>
+                   
 
                     <form method="post" action="GenerarReportes.jsp" target="_black" >
                         <input type="submit" class="bn60" value="Generar Reporte">

@@ -57,12 +57,14 @@
                     </div>
 
                 </div>
-                <% if (request.getAttribute("MensajeError") != null) { %>
-                ${MensajeError}
+                <%                if (request.getAttribute("mensajeError") != null) { %>
+
+                <h5 class="msgError" >${mensajeError}</h5>  
 
                 <%} else {%>
-                ${MensajeExito}        
-                <%}%>
+                <h5 class="msgSucces" >${mensajeExito}</h5> 
+                <% } %>
+                
                 <div class="container">
                     <header>Registrar Documentos</header>
                     <form method="post" action="Document">

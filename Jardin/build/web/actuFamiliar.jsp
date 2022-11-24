@@ -43,6 +43,14 @@
                     </div>
 
                 </div>
+                <%                if (request.getAttribute("mensajeError") != null) { %>
+
+                <h5 class="msgError" >${mensajeError}</h5>  
+
+                <%} else {%>
+                <h5 class="msgSucces" >${mensajeExito}</h5> 
+                <% } %>
+                
                 <%            familiarVO famiVO = (familiarVO) request.getAttribute("datosConsultados");
                     if (famiVO != null) {
                 %>
@@ -159,13 +167,7 @@
         <%}%>
 
 
-        <%
-    if (request.getAttribute("mensajeError") != null) { %>
-        ${mensajeError}
-
-        <%} else {%>
-        ${mensajeExito}        
-        <%}%>
+       
 
         <script src="js/fami.js" type="text/javascript"></script>
     </body>

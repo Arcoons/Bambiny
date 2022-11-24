@@ -48,14 +48,15 @@
                     if (doVO != null) {
 
                 %>
+                <%                if (request.getAttribute("mensajeError") != null) { %>
 
+                <h5 class="msgError" >${mensajeError}</h5>  
+
+                <%} else {%>
+                <h5 class="msgSucces" >${mensajeExito}</h5> 
+                <% } %>
                 <div class="container">
-                    <%                        if (request.getAttribute("mensajeError") != null) { %>
-                    ${mensajeError}
-
-                    <%} else {%>
-                    ${mensajeExito}        
-                    <%}%>
+                    
                     <header>Actualizar Documento</header>
                     <form method="post" action="Document">
                         <div class="form first">

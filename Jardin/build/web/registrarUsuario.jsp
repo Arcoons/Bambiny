@@ -82,7 +82,8 @@
 
                                     </div>
                                 </div>
-
+                                <p id="uError" class="uError" >Debe completar el formulario</p>
+                                <p id="exito" class="exito" >Formulario enviado</p>
                                 <button class="sumbit">
                                     <span class="btnText">Enviar</span>
                                     <i class="uil uil-navigator"></i>

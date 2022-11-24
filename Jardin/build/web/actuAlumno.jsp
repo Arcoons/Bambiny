@@ -50,12 +50,13 @@
 
                 </div>
 
-            <%                if (request.getAttribute("mensajeError") != null) { %>
-            ${mensajeError}
+           <%                if (request.getAttribute("mensajeError") != null) { %>
 
-            <%} else {%>
-            ${mensajeExito}        
-            <%}%>
+                <h5 class="msgError" >${mensajeError}</h5>  
+
+                <%} else {%>
+                <h5 class="msgSucces" >${mensajeExito}</h5> 
+                <% } %>
 
             <%            AlumnoVO aluVO = (AlumnoVO) request.getAttribute("datosConsultados");
                 if (aluVO != null) {

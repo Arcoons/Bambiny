@@ -52,6 +52,14 @@
                     </div>
 
                 </div>
+                
+                <%                if (request.getAttribute("mensajeError") != null) { %>
+
+                <h5 class="msgError" >${mensajeError}</h5>  
+
+                <%} else {%>
+                <h5 class="msgSucces" >${mensajeExito}</h5> 
+                <% } %>
 
                 <%            AcudienteVO2 acuVO = (AcudienteVO2) request.getAttribute("datosConsultados");
                     if (acuVO != null) {
@@ -146,14 +154,7 @@
                 <%}%>
 
 
-                <%
-            if (request.getAttribute("mensajeError") != null) { %>
-                ${mensajeError}
-
-                <%} else {%>
-                ${mensajeExito}        
-                <%}%>
-
+            
 
         </section>
         <script src="js/acu.js" type="text/javascript"></script>
