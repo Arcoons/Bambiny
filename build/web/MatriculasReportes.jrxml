@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="30d6a3de-9903-4d6e-b79a-5a4a2167f5b2">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     matricula.`ALUM_MATR` AS matricula_ALUM_MATR,
+     matricula.`REGIS_MATR` AS matricula_REGIS_MATR,
+     matricula.`FECH_MATR` AS matricula_FECH_MATR,
+     matricula.`ESTADO_MATR` AS matricula_ESTADO_MATR,
+     usuario.`CORREO_USUA` AS usuario_CORREO_USUA,
+     matricula.`ID_MATR` AS matricula_ID_MATR
+FROM
+     `usuario` usuario INNER JOIN `matricula` matricula ON usuario.`ID_USUA` = matricula.`ID_USUA`]]>
+	</queryString>
+	<field name="matricula_ALUM_MATR" class="java.lang.String"/>
+	<field name="matricula_REGIS_MATR" class="java.lang.String"/>
+	<field name="matricula_FECH_MATR" class="java.sql.Timestamp"/>
+	<field name="matricula_ESTADO_MATR" class="java.lang.String"/>
+	<field name="usuario_CORREO_USUA" class="java.lang.String"/>
+	<field name="matricula_ID_MATR" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="163" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="129" y="92" width="671" height="65" forecolor="#F9D39E" backcolor="#F9D39E" uuid="e290bb72-0a60-42cc-9f99-469f9f1ce1de"/>
+				<staticText>
+					<reportElement x="210" y="30" width="263" height="19" uuid="fab2f7ba-194d-4ac4-ade4-59d65704ad30"/>
+					<textElement textAlignment="Center">
+						<font fontName="Corbel Light" size="14"/>
+					</textElement>
+					<text><![CDATA[Matriculas Registrados en el sistema]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="SubTitle" x="210" y="8" width="263" height="22" forecolor="#FFFFFF" uuid="1c228009-feac-44ce-9563-bd36e83a08b1"/>
+					<textElement textAlignment="Center">
+						<font fontName="Franklin Gothic Medium" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[Listado de Matriculas]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="130" y="3" width="671" height="89" forecolor="#88530A" backcolor="#AB690D" uuid="f8dbb6fe-8ea1-4ba8-ac20-770b75ce517a"/>
+				<image>
+					<reportElement x="184" y="1" width="405" height="88" uuid="9fcd6c07-4fb3-4288-88b9-64b07d703a45"/>
+					<imageExpression><![CDATA["./assets/jardin/logito.png"]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement style="Title" x="2" y="0" width="199" height="22" forecolor="#FFFFFF" uuid="a471fc3b-876d-4db5-b6db-2b3048f458fc"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Franklin Gothic Medium" size="14" pdfFontName="Times-Roman"/>
+					</textElement>
+					<text><![CDATA[Gestor de Matriculas]]></text>
+				</staticText>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement x="514" y="1" width="157" height="20" forecolor="#FFFFFF" uuid="d7a3dc31-49de-440b-89a2-7d95ad07ffc0"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+				<textField pattern="h.mm.ss a">
+					<reportElement x="589" y="21" width="82" height="20" forecolor="#FFFFFF" uuid="9ddde557-cb4f-4600-b758-2255722fa540"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+			<image>
+				<reportElement x="12" y="4" width="145" height="152" uuid="ddb72371-117a-48d9-820b-d6a5f61e42d5"/>
+				<imageExpression><![CDATA["./assets/Icon.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="29" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="802" height="1" uuid="ce01ecfb-e73f-4ffa-9b3f-85b266f2c154"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="135" y="1" width="133" height="15" forecolor="#736343" uuid="ad43b1d3-c8c4-40e5-a5ff-7710eab54d01"/>
+				<text><![CDATA[Alumno]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="268" y="1" width="133" height="15" forecolor="#736343" uuid="cf9ca024-7c44-4b70-9b2f-9faae154cb07"/>
+				<text><![CDATA[Matricula]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="401" y="1" width="133" height="15" forecolor="#736343" uuid="3120b375-634a-455f-9b7c-60295e5f9d78"/>
+				<text><![CDATA[Fecha modificacion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="534" y="1" width="133" height="15" forecolor="#736343" uuid="b1cc9317-aa37-4e18-8ee5-21605ab83dfe"/>
+				<text><![CDATA[Estado Matricula]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="668" y="1" width="133" height="15" forecolor="#736343" uuid="f4db605e-ea79-458d-bab9-65c401705fb4"/>
+				<text><![CDATA[Director]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="0" y="1" width="133" height="15" forecolor="#736343" uuid="3740ac39-e626-45c6-bd75-fa792da71d63"/>
+				<text><![CDATA[Numero]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="802" height="15" uuid="9a0b9394-013a-4046-95c9-b0f89fc7f74b"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="135" y="0" width="133" height="15" uuid="a7a93df6-ca11-4f7c-82b1-4f0acb1055c0"/>
+					<textFieldExpression><![CDATA[$F{matricula_ALUM_MATR}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="268" y="0" width="133" height="15" uuid="c710cc50-67f5-4f5b-95e6-69c799388ce0"/>
+					<textFieldExpression><![CDATA[$F{matricula_REGIS_MATR}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="401" y="0" width="133" height="15" uuid="afe81740-aebf-487b-856d-9040e748f411"/>
+					<textFieldExpression><![CDATA[$F{matricula_FECH_MATR}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="534" y="0" width="133" height="15" uuid="cc976c08-57b9-4479-9592-9e00cc978e8e"/>
+					<textFieldExpression><![CDATA[$F{matricula_ESTADO_MATR}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="668" y="0" width="133" height="15" uuid="4416bf71-143d-499d-bd6b-f9bbc9b452cb"/>
+					<textFieldExpression><![CDATA[$F{usuario_CORREO_USUA}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="1" y="0" width="133" height="15" uuid="afdcd97f-9145-4031-910b-83273181ef34"/>
+				<textFieldExpression><![CDATA[$F{matricula_ID_MATR}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="11" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1" uuid="45e87cec-d7a9-4a65-a6d5-bcf692b962a4"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="55" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="1" y="3" width="802" height="48" forecolor="#E5CEAE" backcolor="#AB690D" uuid="1705e2e0-c37d-40e0-863d-9cb9f233eb7e"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="746" y="17" width="40" height="20" forecolor="#FFFFFF" uuid="c4f727a4-e71e-47d8-a3a6-6014953d405a"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="666" y="17" width="80" height="20" forecolor="#FFFFFF" uuid="8777c339-5717-4587-9068-5279a7218005"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<image>
+					<reportElement x="7" y="8" width="345" height="40" uuid="13c49d14-3dce-4e86-b478-f3538673b845"/>
+					<imageExpression><![CDATA["./assets/jardin/logofooter.png"]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
